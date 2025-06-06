@@ -184,7 +184,7 @@ const About: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: 0.1 * index }}
                   >
-                    <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-center justify-between gap-0.5 lg:gap-2">
                       <h4 className="text-lg font-semibold text-gray-800 dark:text-white">
                         {exp.role}
                       </h4>
@@ -193,7 +193,7 @@ const About: React.FC = () => {
                         <span>{exp.period}</span>
                       </div>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-400">
+                    <p className="mt-1 lg:mt-0 text-gray-600 dark:text-gray-400">
                       {exp.company}
                     </p>
                     <p className="mt-2 text-gray-700 dark:text-gray-300">

@@ -28,7 +28,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: "Dev.to",
     url: "https://dev.to/sukanta47",
-    icon: "dev.to",
+    icon: "devto",
   },
   {
     platform: "Medium",

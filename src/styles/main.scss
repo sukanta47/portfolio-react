@@ -46,7 +46,7 @@
   }
 
   .container-custom {
-    @apply max-w-full px-12 pt-[24px] pb-[48px] md:pb-[24px] xs:px-8 sm:px-14 md:px-14 lg:px-16 mt-[80px] sm:mt-[1px] md:mt-[80px];
+    @apply 2xl:max-w-full px-12 pt-[24px] pb-[48px] md:pb-[24px] xs:px-8 sm:px-14 md:px-14 lg:px-16 mt-[80px] sm:mt-[1px] md:mt-[80px];
   }
 
   .heading-xl {
