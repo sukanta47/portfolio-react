@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Arushi Sethi",
+    "email": "arushi.sethi@hurix.com",
+    "designation": "Product Manager",
+    "rating": 5,
+    "review": "The product delivered exactly what we needed!",
+    "featured": true,
+    "company": "Hurix Systems",
+    "location": "Mumbai, India"
+  },
+  {
+    "id": 2,
+    "name": "Shreesha Keshava",
+    "email": "shreeshakeshava@gmail.com",
+    "designation": "Owner",
+    "rating": 5,
+    "review": "Outstanding experience!",
+    "featured": true,
+    "company": "Jagadeva Kutumbakam (NGO)",
+    "location": "Bengaluru, India"
+  },
+  {
+    "id": 3,
+    "name": "Manya M",
+    "email": "manya.m@fireflink.com",
+    "designation": "Product Manager",
+    "rating": 5,
+    "review": "Loved the interface and responsiveness.",
+    "featured": true,
+    "company": "Fireflink",
+    "location": "Bengaluru, India"
+  },
+  {
+    "id": 4,
+    "name": "Thijs van der",
+    "email": "thijs.van@versuni.com",
+    "designation": "Global Manager",
+    "rating": 5,
+    "review": "The product delivered exactly what we needed!",
+    "featured": true,
+    "company": "Versuni",
+    "location": "Amsterdam, Netherlands"
+  }
+]

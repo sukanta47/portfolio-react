@@ -1,0 +1,16 @@
+.skill-bar {
+  @apply w-full h-2 bg-gray-200 dark:bg-dark-600 rounded-full overflow-hidden;
+}
+
+.skill-progress {
+  @apply h-full bg-primary-500 rounded-full;
+}
+
+.accordion-content {
+  @apply rounded-b-lg;
+}
+
+/* Optional: Add a border between accordion items */
+.accordion-item:not(:last-child) {
+  @apply mb-2;
+}

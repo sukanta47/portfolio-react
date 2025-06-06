@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send, MapPin, Phone } from "lucide-react";
-import { aboutMe, socialLinks } from "../data";
+import { folioData } from '../data';
 import SocialLinks from "./SocialLinks";
 import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
+  const {aboutMe} = folioData;
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github as GitHub, ExternalLink } from 'lucide-react';
-import { projects } from '../data';
 import { Project } from '../types';
+import { folioData } from '../data';
 
 const Projects: React.FC = () => {
+  const { projects } = folioData;
   const [filter, setFilter] = useState<string>('all');
   
   const filteredProjects = filter === 'all' 

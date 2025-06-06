@@ -1,0 +1,19 @@
+.step-progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 2px;
+  width: 60%;
+  .step-box {
+    width: 10px;
+    height: 14px;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
+    &.active {
+        background-image: linear-gradient(to right, #3b82f6, #2196f3);
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}

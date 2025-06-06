@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --primary: #3b82f6;
@@ -42,11 +42,11 @@
   }
 
   .section {
-    @apply py-5 px-4 sm:px-6 lg:px-8 transition-all duration-300 ease-in-out;
+    @apply flex justify-center py-5 px-4 sm:px-6 lg:px-8 transition-all duration-300 ease-in-out;
   }
 
   .container-custom {
-    @apply max-w-7xl px-12 mt-[70px] py-[24px] xs:px-8 sm:px-14 md:px-14 lg:px-16;
+    @apply max-w-full px-12 pt-[24px] pb-[48px] md:pb-[24px] xs:px-8 sm:px-14 md:px-14 lg:px-16 mt-[80px] sm:mt-[1px] md:mt-[80px];
   }
 
   .heading-xl {
@@ -74,11 +74,11 @@
   }
 
   .hero-content {
-    @apply flex flex-col items-start gap-6;
+    @apply flex flex-col items-center md:items-start gap-2 md:gap-6;
   }
-  .profile-headline{
+  .profile-headline {
     @apply block text-xl text-primary-500 dark:text-primary-400 mt-2 xs:text-sm m-sm:text-base sm:text-base md:text-lg;
-    svg{
+    svg {
       @apply inline-block;
     }
   }
@@ -92,14 +92,21 @@
 
   .social-icon {
     @apply h-6 w-6 text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300;
+    .github {
+      @apply hover:text-gray-800 dark:hover:text-primary-200;
+    }
   }
 
   .skill-bar {
-    @apply h-2 bg-gray-200 dark:bg-dark-600 rounded-full overflow-hidden;
+    @apply h-1 m-sm:h-2 bg-gray-200 dark:bg-dark-600 rounded-full overflow-hidden;
   }
 
   .skill-progress {
-    @apply h-full bg-primary-500 rounded-full transition-all duration-500 ease-out;
+    @apply h-full rounded-full transition-all duration-500 ease-out;
+    background-image: linear-gradient(45deg, #2bc4d5, #3b82f6);
+    &:hover {
+      background-image: linear-gradient(225deg, #8c2bd58f, #3b82f67d);
+    }
   }
 
   .contact-input {
@@ -113,7 +120,8 @@ html {
 
 body {
   @apply bg-white dark:bg-dark-800 text-gray-900 dark:text-gray-100 transition-colors duration-300;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.5;
 }
 
@@ -143,4 +151,96 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-500 dark:bg-dark-500;
+}
+.star-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: rgba(59, 130, 246, 0.5);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 640px) {
+  .rating-modal-container {
+    width: 95vw;
+    max-width: none;
+  }
+}
+.rating-review-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .rating-summary {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .reviews-section {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .review-item {
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  // Star animation on hover
+  svg {
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.input {
+  @apply w-full px-3 py-2 border border-gray-300 dark:border-dark-600 rounded focus:outline-none focus:ring-2 focus:ring-primary-500;
+}
+.btn {
+  @apply px-4 py-2 rounded font-medium;
+}
+
+.custom-icon {
+  fill: rgb(83, 83, 83);
+  &.linkedin {
+    @apply dark:fill-gray-100;
+    &:hover {
+      fill: #0a66c2;
+      color: #f8fafc;
+      transition: fill 0.3s ease;
+    }
+  }
+  &.devto {
+    &:hover {
+      fill: black;
+      transition: fill 0.3s ease;
+    }
+  }
+  &.upwork:hover {
+    fill: #6cd441;
+    transition: fill 0.3s ease;
+  }
+  &.twitter,
+  &.medium {
+    @apply dark:bg-dark-800 text-gray-900 dark:text-gray-100 hover:text-gray-100 hover:fill-dark-800 dark:hover:text-gray-100 dark:hover:fill-gray-100 transition-colors duration-300;
+  }
+}
+h3{
+  @apply text-lg sm:text-sm md:text-base lg:text-lg font-semibold text-gray-900 dark:text-gray-100;   
 }

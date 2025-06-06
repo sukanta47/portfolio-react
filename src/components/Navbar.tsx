@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun, Code } from "lucide-react";
 import { Transition } from "@headlessui/react";
-import { aboutMe } from "../data/data-me";
-import { navItems } from "../data";
+import { folioData } from "../data";
 import { useTheme } from "../context/ThemeContext";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAppDispatch } from "../app/hooks";
@@ -10,6 +9,7 @@ import Badge from "./Badge";
 import { useBreakpoint } from "../hooks/useBreakpoints";
 
 const Navbar: React.FC = () => {
+  const { aboutMe, navItems } = folioData;
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrolledToShowTitle, setScrolledToShowTitle] = useState(false);
@@ -17,8 +17,30 @@ const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home");
   const dispatch = useAppDispatch();
   const breakpoint = useBreakpoint();
-  const x_initial = breakpoint === "xs" ? 26 : breakpoint === "sm" ? 56 : breakpoint === "md" ? 24 : breakpoint === "lg" ? 44  : breakpoint === "xl" ? 44 : 10;
-  const x_animate = breakpoint === "xs" ? 26 : breakpoint === "sm" ? 56 : breakpoint === "md" ? 24 : breakpoint === "lg" ? 44  : breakpoint === "xl" ? 44 : 10;
+  const x_initial =
+    breakpoint === "xs"
+      ? 26
+      : breakpoint === "sm"
+      ? 56
+      : breakpoint === "md"
+      ? 24
+      : breakpoint === "lg"
+      ? 44
+      : breakpoint === "xl"
+      ? 44
+      : 10;
+  const x_animate =
+    breakpoint === "xs"
+      ? 26
+      : breakpoint === "sm"
+      ? 56
+      : breakpoint === "md"
+      ? 24
+      : breakpoint === "lg"
+      ? 44
+      : breakpoint === "xl"
+      ? 44
+      : 10;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,15 +92,27 @@ const Navbar: React.FC = () => {
           : "bg-transparent py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-20">
+          <div className="flex items-center gap-4 md:gap-20">
             <div className="flex flex-col justify-center gap-1 h-[78px]">
               <motion.div
                 className="ease-in-out hero-content max-w-2xl"
                 animate={{
                   y: scrolledToShowTitle ? 2 : 0,
-                  x: scrolledToShowTitle ? (breakpoint === "xs" ? 12 : breakpoint === "sm" ? 8 : breakpoint === "md" ? -4  : breakpoint === "lg" ? -10  : breakpoint === "xl" ? -12 : -14): 0,
+                  x: scrolledToShowTitle
+                    ? breakpoint === "xs"
+                      ? 12
+                      : breakpoint === "sm"
+                      ? 8
+                      : breakpoint === "md"
+                      ? -4
+                      : breakpoint === "lg"
+                      ? -10
+                      : breakpoint === "xl"
+                      ? -12
+                      : -14
+                    : 0,
                   scale: scrolledToShowTitle ? 1.3 : 1,
                 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -96,9 +130,9 @@ const Navbar: React.FC = () => {
                   <motion.div
                     key="hero-badge"
                     className="ease-in-out hero-content max-w-2xl flex items-center"
-                    initial={{ y: 10, opacity: 0, scale: 1.2, x: x_initial}}
-                    animate={{ y: 0, opacity: 1, scale: 1, x:x_animate }} // shift left
-                    exit={{ y: 10, opacity: 0, scale: 1.2, x:x_initial }}
+                    initial={{ y: 10, opacity: 0, scale: 1.2, x: x_initial }}
+                    animate={{ y: 0, opacity: 1, scale: 1, x: x_animate }} // shift left
+                    exit={{ y: 10, opacity: 0, scale: 1.2, x: x_initial }}
                     transition={{
                       duration: 0.4,
                       ease: "easeInOut",

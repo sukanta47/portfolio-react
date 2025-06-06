@@ -9,11 +9,17 @@ export interface Project {
   featured: boolean;
   category: 'web' | 'mobile' | 'design' | 'other';
 }
-
+export interface SkillDetails {
+  subSkill: string;
+  proficiency: number; // 0-100
+  description?: string;
+  icon?: string;
+}
 export interface Skill {
   name: string;
   proficiency: number; // 0-100
   category: 'frontend' | 'backend' | 'design' | 'other';
+  details?: SkillDetails[];
 }
 
 export interface SocialLink {
@@ -35,3 +41,10 @@ export interface Testimonial {
   avatar: string;
   content: string;
 }
+ export interface Metadata {
+   title: string;
+   description: string;
+   url: string;
+   image?: string;
+   extractHtml?: string;
+ };
