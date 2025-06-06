@@ -79,7 +79,7 @@ const Skills: React.FC = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 w-[28rem] md:w-[38rem] lg:w-[52rem] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 w-[18rem] sm:w-[28rem] md:w-[38rem] lg:w-[52rem] mx-auto">
           {activeSkills.map((skill, index) => (
             <motion.div
               key={skill.name}

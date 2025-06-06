@@ -138,7 +138,7 @@ const Testimonials: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.3 }}
-          className="bg-white dark:bg-dark-700 rounded-xl p-8 shadow-lg w-[28rem] xl:w-[56rem] lg:w-[52rem] md:w-[40rem]"
+          className="bg-white dark:bg-dark-700 rounded-xl p-8 shadow-lg w-[18rem] sm:w-[28rem] xl:w-[56rem] lg:w-[52rem] md:w-[40rem]"
         >
           {featuredReviews.length - 1 === currentIndex ? (
             <div className="flex flex-col items-center justify-center text-center gap-6 relative h-[208px]">
