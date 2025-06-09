@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
     subject: "",
     message: "",
   });
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID_YAHOO_SMTP;
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID_GMAIL;
   const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
 
@@ -33,7 +33,6 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    // formData.email="biswas.sukanta47@yahoo.com";
     console.log("Form data:", {SERVICE_ID,
       TEMPLATE_ID,
       formData,
@@ -45,11 +44,9 @@ const Contact: React.FC = () => {
       USER_ID
     ).then((response)=>{
       console.log("SUCCESS!", response.status, response.text);
-      alert("Email has been sent successfully!")
     }).catch((error)=>{
       console.error("Error sending email:", error)
     });
-    // Simulate form submission
     setTimeout(() => {
       setSubmitting(false);
       setSubmitted(true);
@@ -60,7 +57,6 @@ const Contact: React.FC = () => {
         message: "",
       });
 
-      // Reset success message after 5 seconds
       setTimeout(() => {
         setSubmitted(false);
       }, 5000);

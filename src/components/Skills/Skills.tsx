@@ -5,6 +5,7 @@ import "./Skills.scss";
 import SubSkills from "./SubSkills";
 import SkillIcon from "./SkillIcon";
 import { Quote } from "lucide-react";
+import { useBreakpoint } from "../../hooks/useBreakpoints";
 
 const Skills: React.FC = () => {
   const { skills } = folioData;
@@ -19,7 +20,18 @@ const Skills: React.FC = () => {
     { value: "design", label: "Design" },
     { value: "other", label: "Other" },
   ];
-
+  const breakpoint = useBreakpoint();
+  const iconSize =
+    breakpoint === "xs"
+      ? 24
+      : breakpoint === "sm"
+      ? 24
+      : breakpoint === "md"
+      ? 28
+      : breakpoint === "xl"
+      ? 44
+      : 32;
+  console.log(iconSize);
   useEffect(() => {
     if (filter === "all") {
       setActiveSkills(skills);
@@ -98,8 +110,9 @@ const Skills: React.FC = () => {
                     onClick={() => handleAccordion(index)}
                     className="focus:outline-none bg-transparent border-none p-0 m-0 text-inherit flex items-center gap-2"
                     aria-label={`Toggle details for ${skill.name}`}
-                  >
-                    <SkillIcon name={skill.icon ?? ""} size={32}/>{skill.name}
+                  >            
+                    <SkillIcon name={skill.icon ?? ""} className="size-4 md:size-6 xl:size-7" />
+                    {skill.name}
                   </button>
                 </h3>
                 <span className="flex gap-5">
@@ -144,7 +157,12 @@ const Skills: React.FC = () => {
                     transition={{ duration: 0.3 }}
                     className="px-4 overflow-hidden"
                   >
-                    {skill.description &&<p className="text-gray-500 text-xs/4 italic p-2 mt-2 bg-gray-100 rounded-md"><Quote className="h-6 w-6" />{skill.description}</p>}
+                    {skill.description && (
+                      <p className="text-gray-500 text-xs/4 italic p-2 mt-2 bg-gray-100 rounded-md">
+                        <Quote className="h-6 w-6" />
+                        {skill.description}
+                      </p>
+                    )}
                     <div className="py-4 skill-chip">
                       <SubSkills subskills={skill.subskills ?? []} />
                     </div>

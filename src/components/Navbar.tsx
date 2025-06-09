@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useAppDispatch } from "../app/hooks";
 import Badge from "./Badge";
 import { useBreakpoint } from "../hooks/useBreakpoints";
+import logo from "../assets/sb-logo-blue.png";
 
 const Navbar: React.FC = () => {
   const { aboutMe, navItems } = folioData;
@@ -58,9 +59,8 @@ const Navbar: React.FC = () => {
         type: "SET_SCROLLED_TO_SHOW_TITLE",
         payload: window.scrollY > 42,
       });
-      // Update active section based on scroll position
       const sections = document.querySelectorAll("section[id]");
-      const scrollPosition = window.scrollY + 80; // Offset for navbar height
+      const scrollPosition = window.scrollY + 80; 
 
       sections.forEach((section) => {
         const sectionTop = (section as HTMLElement).offsetTop;
@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
     if (element) {
       const topOffset = (element as HTMLElement).offsetTop;
       window.scrollTo({
-        top: topOffset - 70, // Adjust for navbar height
+        top: topOffset - 70,
         behavior: "smooth",
       });
     }
@@ -102,9 +102,6 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-6 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-4 h-16">
-          {/* <div className="flex items-center gap-4 md:gap-20">
-            
-          </div> */}
           <div className="flex flex-col col-span-5 sm:col-span-1 md:col-span-2 lg:col-span-1 justify-center items-start px-auto gap-1 h-[78px]">
             <motion.div
               className="ease-in-out hero-content max-w-2xl"
@@ -136,12 +133,11 @@ const Navbar: React.FC = () => {
                 href="#home"
                 className="ease-in-out flex items-center gap-2 text-primary-500 font-bold text-xl"
               >
-                {/* <Code className="h-6 w-6" /> */}
                 <img
-                  src="src/assets/sb-logo-blue.png"
+                  src={logo}
                   className={`${scrolledToShowTitle ? "h-8 w-8" : "h-12 w-12"}`}
                   alt="logo"
-                ></img>
+                />
                 <span className="dark:text-white">{aboutMe.name}</span>
               </a>
             </motion.div>

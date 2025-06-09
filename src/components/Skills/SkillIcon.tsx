@@ -60,14 +60,14 @@ const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
 
 type SkillIconProps = {
   name: string;
-  size?: number;
+  // size?: number;
   className?: string;
 };
 
-const SkillIcon: React.FC<SkillIconProps> = ({ name, size = 24, className }) => {
+const SkillIcon: React.FC<SkillIconProps> = ({ name, className }) => {
   const IconComponent = iconMap[name];
   return IconComponent ? (
-    <IconComponent width={size} height={size} className={className} />
+    <IconComponent className={className} />
   ) : (
     <span className="text-red-500">Icon not found: {name}</span>
   );
