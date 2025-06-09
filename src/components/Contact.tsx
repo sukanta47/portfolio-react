@@ -10,12 +10,19 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    title: "",
     message: "",
   });
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID_GMAIL;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
+  let SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID_GMAIL;
+  let TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  let USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
+
+  if (!SERVICE_ID || !TEMPLATE_ID || !USER_ID) {
+    //setting default values
+    SERVICE_ID = "service_s922n3c";
+    TEMPLATE_ID = "template_kfswwjm";
+    USER_ID = "XU89mhnvbR4T21XaM";
+  }
 
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -33,10 +40,6 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    console.log("Form data:", {SERVICE_ID,
-      TEMPLATE_ID,
-      formData,
-      USER_ID});
     emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID,
@@ -53,7 +56,7 @@ const Contact: React.FC = () => {
       setFormData({
         name: "",
         email: "",
-        subject: "",
+        title: "",
         message: "",
       });
 
@@ -240,8 +243,8 @@ const Contact: React.FC = () => {
                   <input
                     type="text"
                     id="subject"
-                    name="subject"
-                    value={formData.subject}
+                    name="title"
+                    value={formData.title}
                     onChange={handleChange}
                     className="contact-input"
                     placeholder="Subject"

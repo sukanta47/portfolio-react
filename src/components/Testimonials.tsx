@@ -33,7 +33,6 @@ const Testimonials: React.FC = () => {
     const _featuredReviews: Review[] = allReviews
       .filter((r) => r.featured)
       .slice(0, 3);
-    console.log(reviewsData, _featuredReviews);
     _featuredReviews.push({
       id: 4,
       name: "Thijs van der",
@@ -45,7 +44,6 @@ const Testimonials: React.FC = () => {
       company: "Versuni",
       location: "Amsterdam, Netherlands",
     });
-    console.log({_featuredReviews})
     setFeaturedReviews(_featuredReviews);
     localStorage.setItem("reviews", JSON.stringify(reviewsData));
   }, []);
@@ -117,12 +115,9 @@ const Testimonials: React.FC = () => {
                 </p>
                 <h4 className="font-bold mt-2">{review.name}</h4>
                 <span className="text-sm text-gray-500">
-                  {review.designation},{" "}
-                  {review.company}
+                  {review.designation}, {review.company}
                 </span>
-                <div className="text-sm text-gray-500">
-                  {review.location}
-                </div>
+                <div className="text-sm text-gray-500">{review.location}</div>
               </div>
             ))}
           </div>

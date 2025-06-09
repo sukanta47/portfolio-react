@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
       : breakpoint === "xl"
       ? 44
       : 32;
-  console.log(iconSize);
+      
   useEffect(() => {
     if (filter === "all") {
       setActiveSkills(skills);
