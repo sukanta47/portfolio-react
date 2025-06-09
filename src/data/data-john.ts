@@ -46,437 +46,758 @@ export const skills: Skill[] = [
     name: "React",
     proficiency: 90,
     category: "frontend",
-    details: [
-      {
-        subSkill: "redux",
-        proficiency: 85,
-        description: "I have extensive experience state management using Redux as RTK. I am proficient in writing slices and its corresponding reducers.",
-      },
-      {
-        subSkill: "RTK/Query",
-        proficiency: 80,
-        description: "I have experience with React Query for data fetching and caching, which helps in managing server state efficiently.",
-      },
+    icon: "reactjs",
+    description:"Proficient in React.js for building scalable, component-driven UIs with modern features like hooks, lazy loading, and Redux Toolkit. Focused on performance, accessibility, and clean architecture.",
+    subskills: [
       {
         subSkill: "framer-motion",
         proficiency: 75,
-        description: "I have used Framer Motion for creating smooth animations and transitions in React applications.",
+        description:
+          "I have used Framer Motion for creating smooth animations and transitions in React applications.",
       },
       {
         subSkill: "contextApi",
         proficiency: 90,
-        description: "I have experience with contextApi for data sharing between components without prop drilling.",
+        description:
+          "I have experience with contextApi for data sharing between components without prop drilling.",
       },
       {
         subSkill: "react-router",
         proficiency: 90,
-        description: "I have experience in react-router-dom v5 as well as modern routing with v6 and v7.",
+        description:
+          "I have experience in react-router-dom v5 as well as modern routing with v6 and v7.",
       },
     ],
   },
-  { 
-    name: "TypeScript", 
-    proficiency: 85, 
+  {
+    name: "TypeScript",
+    proficiency: 85,
     category: "frontend",
-    details: [
+    icon: "typescript",
+    subskills: [
       {
         subSkill: "Type Annotations",
         proficiency: 90,
-        description: "Strong understanding of type annotations for variables, functions, and complex data structures."
+        description:
+          "Strong understanding of type annotations for variables, functions, and complex data structures.",
       },
       {
         subSkill: "Interfaces & Types",
         proficiency: 85,
-        description: "Proficient in defining and using interfaces and custom types for robust type checking."
+        description:
+          "Proficient in defining and using interfaces and custom types for robust type checking.",
       },
       {
         subSkill: "Generics",
         proficiency: 75,
-        description: "Experience with generic types to create reusable and type-safe components and functions."
+        description:
+          "Experience with generic types to create reusable and type-safe components and functions.",
       },
       {
         subSkill: "Utility Types",
         proficiency: 80,
-        description: "Familiar with key utility types like Partial, Pick, Omit, and Record for type transformations."
-      }
+        description:
+          "Familiar with key utility types like Partial, Pick, Omit, and Record for type transformations.",
+      },
     ],
   },
-  { 
-    name: "JavaScript", 
-    proficiency: 95, 
+  {
+    name: "JavaScript",
+    proficiency: 95,
     category: "frontend",
-    details: [
+    icon: "javascript",
+    subskills: [
       {
         subSkill: "ES6+ Features",
         proficiency: 95,
-        description: "Extensive experience with modern JavaScript features including arrow functions, destructuring, spread/rest operators, etc."
+        description:
+          "Extensive experience with modern JavaScript features including arrow functions, destructuring, spread/rest operators, etc.",
       },
       {
         subSkill: "Asynchronous JS",
         proficiency: 90,
-        description: "Deep understanding of promises, async/await, and event loop for handling asynchronous operations."
+        description:
+          "Deep understanding of promises, async/await, and event loop for handling asynchronous operations.",
       },
       {
         subSkill: "Functional Programming",
         proficiency: 85,
-        description: "Proficient in functional programming concepts like pure functions, higher-order functions, and immutability."
+        description:
+          "Proficient in functional programming concepts like pure functions, higher-order functions, and immutability.",
       },
       {
         subSkill: "DOM Manipulation",
         proficiency: 90,
-        description: "Strong skills in manipulating the DOM directly and optimizing performance."
-      }
+        description:
+          "Strong skills in manipulating the DOM directly and optimizing performance.",
+      },
     ],
   },
-  { 
-    name: "HTML/CSS", 
-    proficiency: 90, 
+  {
+    name: "HTML",
+    proficiency: 90,
     category: "frontend",
-    details: [
+    icon: "html5",
+    subskills: [
       {
         subSkill: "Semantic HTML",
         proficiency: 95,
-        description: "Strong focus on writing semantic, accessible HTML markup following best practices."
+        description:
+          "Strong focus on writing semantic, accessible HTML markup following best practices.",
       },
       {
         subSkill: "CSS Flexbox/Grid",
         proficiency: 90,
-        description: "Expertise in modern layout techniques using Flexbox and CSS Grid for responsive designs."
+        description:
+          "Expertise in modern layout techniques using Flexbox and CSS Grid for responsive designs.",
       },
       {
         subSkill: "CSS Animations",
         proficiency: 80,
-        description: "Experience creating smooth transitions and animations using pure CSS."
+        description:
+          "Experience creating smooth transitions and animations using pure CSS.",
       },
       {
         subSkill: "Accessibility",
         proficiency: 85,
-        description: "Knowledge of WCAG guidelines and ARIA attributes for creating accessible web applications."
-      }
+        description:
+          "Knowledge of WCAG guidelines and ARIA attributes for creating accessible web applications.",
+      },
     ],
   },
-  { 
-    name: "Tailwind CSS", 
-    proficiency: 85, 
+  {
+    name: "CSS",
+    proficiency: 90,
     category: "frontend",
-    details: [
+    icon: "css3",
+    subskills: [],
+  },
+  {
+    name: "Redux",
+    proficiency: 85,
+    category: "frontend",
+    icon: "redux",
+    subskills: [
+      {
+        subSkill: "Redux Toolkit (RTK)",
+        proficiency: 85,
+        description:
+          "I have extensive experience state management using Redux as RTK. I am proficient in writing slices and its corresponding reducers.",
+      },
+      {
+        subSkill: "RTK/Query",
+        proficiency: 80,
+        description:
+          "I have experience with React Query for data fetching and caching, which helps in managing server state efficiently.",
+      },
+    ],
+  },
+  {
+    name: "Angular",
+    proficiency: 85,
+    category: "frontend",
+    icon: "angular",
+    subskills: [
+      {
+        subSkill: "Components & Modules",
+        proficiency: 90,
+        description:
+          "Expert in creating reusable components and organizing them into feature and shared modules for scalable architecture.",
+      },
+      {
+        subSkill: "Reactive Forms & Template-Driven Forms",
+        proficiency: 85,
+        description:
+          "Extensive experience with both reactive and template-driven forms for building dynamic and validated forms.",
+      },
+      {
+        subSkill: "RxJS & Observables",
+        proficiency: 80,
+        description:
+          "Proficient in using RxJS for reactive programming, handling streams, and managing complex asynchronous logic.",
+      },
+      {
+        subSkill: "Dependency Injection",
+        proficiency: 85,
+        description:
+          "Solid understanding of Angular's DI system to create flexible, testable, and maintainable services.",
+      },
+      {
+        subSkill: "Angular Routing",
+        proficiency: 80,
+        description:
+          "Experienced in configuring routes, lazy loading modules, route guards, and parameterized navigation.",
+      },
+      {
+        subSkill: "State Management (NgRx)",
+        proficiency: 75,
+        description:
+          "Worked with NgRx for managing application state in large-scale Angular applications using Redux pattern.",
+      },
+      {
+        subSkill: "Angular CLI & Project Setup",
+        proficiency: 85,
+        description:
+          "Efficient in using Angular CLI for scaffolding, serving, and building Angular projects with custom configurations.",
+      },
+    ],
+  },
+  {
+    name: "Vue.js",
+    proficiency: 80,
+    category: "frontend",
+    icon: "vuejs",
+    subskills: [
+      {
+        subSkill: "Vue Components & Composition API",
+        proficiency: 85,
+        description:
+          "Proficient in building scalable applications using Vue’s Single File Components and the modern Composition API.",
+      },
+      {
+        subSkill: "Vue Router",
+        proficiency: 80,
+        description:
+          "Experience in configuring routing, nested routes, route guards, and lazy loading components using Vue Router.",
+      },
+      {
+        subSkill: "Reactive Forms & v-model",
+        proficiency: 85,
+        description:
+          "Skilled in creating forms using `v-model` with reactive data binding, validation, and form handling logic.",
+      },
+      {
+        subSkill: "Composition API & Reusability",
+        proficiency: 80,
+        description:
+          "Built reusable logic across components using `setup()`, `ref`, `computed`, and custom composables.",
+      },
+      {
+        subSkill: "Vue Lifecycle & Directives",
+        proficiency: 85,
+        description:
+          "Strong knowledge of Vue’s lifecycle hooks and built-in directives like `v-if`, `v-for`, and `v-bind`.",
+      },
+      {
+        subSkill: "Vue CLI / Vite",
+        proficiency: 80,
+        description:
+          "Experienced in project scaffolding, development, and builds using Vue CLI and modern tooling like Vite.",
+      },
+    ],
+  },
+  {
+    name: "Next.js",
+    proficiency: 75,
+    category: "frontend",
+    icon: "nextjs",
+    subskills: [
+      {
+        subSkill: "File-based Routing",
+        proficiency: 85,
+        description:
+          "Utilized Next.js file-system-based router to define dynamic and nested routes with ease.",
+      },
+      {
+        subSkill: "API Routes",
+        proficiency: 75,
+        description:
+          "Created serverless API endpoints using Next.js API routes for backend logic and data processing.",
+      },
+      {
+        subSkill: "Static Site Generation (SSG)",
+        proficiency: 80,
+        description:
+          "Implemented static generation with `getStaticProps` and `getStaticPaths` for performance and scalability.",
+      },
+      {
+        subSkill: "Server-Side Rendering (SSR)",
+        proficiency: 70,
+        description:
+          "Used `getServerSideProps` to fetch data on every request for dynamic pages.",
+      },
+      {
+        subSkill: "Incremental Static Regeneration (ISR)",
+        proficiency: 65,
+        description:
+          "Leveraged ISR to update static content without rebuilding the entire site.",
+      },
+      {
+        subSkill: "Image Optimization",
+        proficiency: 70,
+        description:
+          "Optimized media with Next.js's built-in Image component for better performance.",
+      },
+      {
+        subSkill: "App Directory & Server Components",
+        proficiency: 60,
+        description:
+          "Explored the new app directory structure and server components in Next.js 13+ for better modularization.",
+      },
+    ],
+  },
+  {
+    name: "Tailwind CSS",
+    proficiency: 85,
+    category: "frontend",
+    icon: "tailwindcss",
+    subskills: [
       {
         subSkill: "Utility-First Workflow",
         proficiency: 90,
-        description: "Highly proficient in the utility-first approach for rapid UI development."
+        description:
+          "Highly proficient in the utility-first approach for rapid UI development.",
       },
       {
         subSkill: "Custom Configuration",
         proficiency: 80,
-        description: "Experience extending and customizing Tailwind's default configuration."
+        description:
+          "Experience extending and customizing Tailwind's default configuration.",
       },
       {
         subSkill: "Dark Mode",
         proficiency: 85,
-        description: "Implemented dark mode functionality using Tailwind's dark variant."
+        description:
+          "Implemented dark mode functionality using Tailwind's dark variant.",
       },
       {
         subSkill: "JIT Mode",
         proficiency: 75,
-        description: "Experience working with Just-In-Time mode for improved performance."
-      }
+        description:
+          "Experience working with Just-In-Time mode for improved performance.",
+      },
     ],
   },
-  { 
-    name: "SASS/SCSS", 
-    proficiency: 80, 
+  {
+    name: "SASS",
+    proficiency: 80,
     category: "frontend",
-    details: [
+    icon: "sass",
+    subskills: [
       {
         subSkill: "Variables & Mixins",
         proficiency: 85,
-        description: "Extensive use of variables and mixins for maintainable and DRY CSS."
+        description:
+          "Extensive use of variables and mixins for maintainable and DRY CSS.",
       },
       {
         subSkill: "Nesting",
         proficiency: 80,
-        description: "Proficient in nested syntax for cleaner and more organized stylesheets."
+        description:
+          "Proficient in nested syntax for cleaner and more organized stylesheets.",
       },
       {
         subSkill: "Modules",
         proficiency: 75,
-        description: "Experience organizing styles into modular partial files for better structure."
+        description:
+          "Experience organizing styles into modular partial files for better structure.",
       },
       {
         subSkill: "Functions",
         proficiency: 70,
-        description: "Created custom functions for complex calculations and operations in styles."
-      }
+        description:
+          "Created custom functions for complex calculations and operations in styles.",
+      },
     ],
   },
-  { 
-    name: "Node.js", 
-    proficiency: 75, 
+  {
+    name: "Node.js",
+    proficiency: 60,
     category: "backend",
-    details: [
+    icon: "nodejs",
+    subskills: [
       {
         subSkill: "REST API Development",
         proficiency: 80,
-        description: "Experience building RESTful APIs with Node.js and Express."
+        description:
+          "Experience building RESTful APIs with Node.js and Express.",
       },
       {
         subSkill: "File System",
         proficiency: 70,
-        description: "Worked with Node's file system module for various I/O operations."
+        description:
+          "Worked with Node's file system module for various I/O operations.",
       },
       {
         subSkill: "Streams",
         proficiency: 65,
-        description: "Basic understanding of working with streams for handling large datasets."
+        description:
+          "Basic understanding of working with streams for handling large datasets.",
       },
       {
         subSkill: "Error Handling",
         proficiency: 75,
-        description: "Implemented robust error handling middleware and patterns."
-      }
+        description:
+          "Implemented robust error handling middleware and patterns.",
+      },
     ],
   },
-  { 
-    name: "Express", 
-    proficiency: 70, 
+  {
+    name: "Express",
+    proficiency: 50,
     category: "backend",
-    details: [
+    icon: "expressjs",
+    subskills: [
       {
         subSkill: "Middleware",
         proficiency: 75,
-        description: "Experience creating and using middleware for various application needs."
+        description:
+          "Experience creating and using middleware for various application needs.",
       },
       {
         subSkill: "Routing",
         proficiency: 80,
-        description: "Proficient in setting up and organizing routes in Express applications."
+        description:
+          "Proficient in setting up and organizing routes in Express applications.",
       },
       {
         subSkill: "Authentication",
         proficiency: 65,
-        description: "Implemented JWT-based authentication in Express applications."
+        description:
+          "Implemented JWT-based authentication in Express applications.",
       },
       {
         subSkill: "Error Handling",
         proficiency: 70,
-        description: "Configured custom error handling middleware for API responses."
-      }
+        description:
+          "Configured custom error handling middleware for API responses.",
+      },
     ],
   },
-  { 
-    name: "MongoDB", 
-    proficiency: 65, 
+  {
+    name: "MongoDB",
+    proficiency: 65,
     category: "backend",
-    details: [
+    icon: "mongodb",
+    subskills: [
       {
         subSkill: "CRUD Operations",
         proficiency: 70,
-        description: "Experience performing all basic CRUD operations with MongoDB."
+        description:
+          "Experience performing all basic CRUD operations with MongoDB.",
       },
       {
         subSkill: "Aggregation",
         proficiency: 60,
-        description: "Basic understanding of aggregation pipelines for complex queries."
+        description:
+          "Basic understanding of aggregation pipelines for complex queries.",
       },
       {
         subSkill: "Indexing",
         proficiency: 55,
-        description: "Knowledge of creating indexes for performance optimization."
+        description:
+          "Knowledge of creating indexes for performance optimization.",
       },
       {
         subSkill: "Mongoose ODM",
         proficiency: 65,
-        description: "Experience working with Mongoose for schema validation and modeling."
-      }
+        description:
+          "Experience working with Mongoose for schema validation and modeling.",
+      },
     ],
   },
-  { 
-    name: "GraphQL", 
-    proficiency: 60, 
-    category: "backend",
-    details: [
-      {
-        subSkill: "Schemas & Types",
-        proficiency: 65,
-        description: "Experience defining GraphQL schemas and types for API contracts."
-      },
-      {
-        subSkill: "Resolvers",
-        proficiency: 60,
-        description: "Implemented resolvers to handle GraphQL queries and mutations."
-      },
-      {
-        subSkill: "Apollo Client",
-        proficiency: 55,
-        description: "Basic experience integrating GraphQL with Apollo Client in frontend."
-      },
-      {
-        subSkill: "Error Handling",
-        proficiency: 50,
-        description: "Configured basic error handling in GraphQL resolvers."
-      }
-    ],
-  },
-  { 
-    name: "UI/UX Design", 
-    proficiency: 80, 
+  {
+    name: "Figma",
+    proficiency: 85,
     category: "design",
-    details: [
-      {
-        subSkill: "Wireframing",
-        proficiency: 85,
-        description: "Experience creating low and high fidelity wireframes for web applications."
-      },
-      {
-        subSkill: "User Flows",
-        proficiency: 80,
-        description: "Designed comprehensive user flows for optimal user experience."
-      },
-      {
-        subSkill: "Prototyping",
-        proficiency: 75,
-        description: "Created interactive prototypes to test and validate design concepts."
-      },
-      {
-        subSkill: "Design Systems",
-        proficiency: 70,
-        description: "Experience contributing to and working with design systems."
-      }
-    ],
-  },
-  { 
-    name: "Figma", 
-    proficiency: 85, 
-    category: "design",
-    details: [
+    icon: "figma",
+    subskills: [
       {
         subSkill: "Component Libraries",
         proficiency: 90,
-        description: "Created and maintained reusable component libraries in Figma."
+        description:
+          "Created and maintained reusable component libraries in Figma.",
       },
       {
         subSkill: "Auto Layout",
         proficiency: 85,
-        description: "Extensive use of auto layout for responsive and scalable designs."
+        description:
+          "Extensive use of auto layout for responsive and scalable designs.",
       },
       {
         subSkill: "Prototyping",
         proficiency: 80,
-        description: "Built interactive prototypes with complex animations and transitions."
+        description:
+          "Built interactive prototypes with complex animations and transitions.",
       },
       {
         subSkill: "Design Handoff",
         proficiency: 75,
-        description: "Prepared designs for developer handoff with proper documentation."
-      }
+        description:
+          "Prepared designs for developer handoff with proper documentation.",
+      },
     ],
   },
-  { 
-    name: "Adobe Photoshop", 
-    proficiency: 70, 
-    category: "design",
-    details: [
-      {
-        subSkill: "Photo Editing",
-        proficiency: 75,
-        description: "Experience with basic to intermediate photo editing and retouching."
-      },
-      {
-        subSkill: "Digital Painting",
-        proficiency: 65,
-        description: "Basic skills in digital painting and illustration techniques."
-      },
-      {
-        subSkill: "Compositing",
-        proficiency: 60,
-        description: "Created composite images by combining multiple elements."
-      },
-      {
-        subSkill: "Web Design",
-        proficiency: 70,
-        description: "Designed web page mockups and assets in Photoshop."
-      }
-    ],
-  },
-  { 
-    name: "Git/GitHub", 
-    proficiency: 85, 
+  {
+    name: "Git",
+    proficiency: 85,
     category: "other",
-    details: [
+    icon: "git",
+    subskills: [
       {
         subSkill: "Version Control",
         proficiency: 90,
-        description: "Strong understanding of Git version control for collaborative development."
+        description:
+          "Strong understanding of Git version control for collaborative development.",
       },
       {
         subSkill: "Branching Strategy",
         proficiency: 85,
-        description: "Experience with Git Flow and other branching strategies."
+        description: "Experience with Git Flow and other branching strategies.",
       },
       {
         subSkill: "Pull Requests",
         proficiency: 80,
-        description: "Regularly create and review pull requests with proper documentation."
+        description:
+          "Regularly create and review pull requests with proper documentation.",
       },
       {
         subSkill: "CI/CD Integration",
         proficiency: 75,
-        description: "Configured GitHub Actions for basic CI/CD pipelines."
-      }
+        description: "Configured GitHub Actions for basic CI/CD pipelines.",
+      },
     ],
   },
-  { 
-    name: "Docker", 
-    proficiency: 60, 
+  {
+    name: "GitHub",
+    proficiency: 85,
     category: "other",
-    details: [
+    icon: "github",
+    subskills: [],
+  },
+  {
+    name: "Docker",
+    proficiency: 60,
+    category: "other",
+    icon: "docker",
+    subskills: [
       {
         subSkill: "Containerization",
         proficiency: 65,
-        description: "Basic experience containerizing applications with Docker."
+        description:
+          "Basic experience containerizing applications with Docker.",
       },
       {
         subSkill: "Docker Compose",
         proficiency: 55,
-        description: "Configured multi-container applications using Docker Compose."
+        description:
+          "Configured multi-container applications using Docker Compose.",
       },
       {
         subSkill: "Image Optimization",
         proficiency: 50,
-        description: "Basic understanding of optimizing Docker images for size and performance."
+        description:
+          "Basic understanding of optimizing Docker images for size and performance.",
       },
       {
         subSkill: "Networking",
         proficiency: 45,
-        description: "Basic knowledge of Docker networking concepts."
-      }
+        description: "Basic knowledge of Docker networking concepts.",
+      },
     ],
   },
-  { 
-    name: "AWS", 
-    proficiency: 55, 
+  {
+    name: "AWS",
+    proficiency: 55,
     category: "other",
-    details: [
+    icon: "aws",
+    subskills: [
       {
         subSkill: "EC2",
         proficiency: 60,
-        description: "Basic experience deploying and managing EC2 instances."
+        description: "Basic experience deploying and managing EC2 instances.",
       },
       {
         subSkill: "S3",
         proficiency: 65,
-        description: "Configured S3 buckets for static website hosting and file storage."
+        description:
+          "Configured S3 buckets for static website hosting and file storage.",
       },
       {
         subSkill: "Lambda",
         proficiency: 50,
-        description: "Created basic serverless functions with AWS Lambda."
+        description: "Created basic serverless functions with AWS Lambda.",
       },
       {
         subSkill: "IAM",
         proficiency: 55,
-        description: "Configured basic IAM policies and permissions."
+        description: "Configured basic IAM policies and permissions.",
+      },
+    ],
+  },
+  {
+    name: "Bootstrap",
+    proficiency: 75,
+    category: "frontend",
+    icon: "bootstrap",
+    subskills: [],
+  },
+  {
+    name: "GitLab",
+    proficiency: 70,
+    category: "other",
+    icon: "gitlab",
+    subskills: [
+      {
+        subSkill: "Repository Management",
+        proficiency: 80,
+        description:
+          "Used GitLab repositories for source control, merge requests, and code collaboration.",
+      },
+      {
+        subSkill: "CI/CD Pipelines",
+        proficiency: 75,
+        description:
+          "Configured GitLab CI/CD pipelines using `.gitlab-ci.yml` for continuous integration and deployment.",
+      },
+      {
+        subSkill: "Issues & Boards",
+        proficiency: 70,
+        description:
+          "Utilized GitLab issues, labels, and boards for task tracking and sprint planning.",
+      },
+      {
+        subSkill: "Environments & Deployments",
+        proficiency: 60,
+        description:
+          "Managed environments and deployment stages for staging and production workflows.",
+      },
+    ],
+  },
+  {
+    name: "Jira",
+    proficiency: 80,
+    category: "other",
+    icon: "jira",
+    subskills: [
+      {
+        subSkill: "Agile Boards",
+        proficiency: 85,
+        description:
+          "Managed Scrum and Kanban boards for sprint planning, backlog grooming, and tracking progress.",
+      },
+      {
+        subSkill: "Issue Tracking",
+        proficiency: 80,
+        description:
+          "Created and managed epics, stories, and tasks with detailed descriptions and workflows.",
+      },
+      {
+        subSkill: "Workflows & Automation",
+        proficiency: 75,
+        description:
+          "Configured custom workflows and automation rules for efficient task transitions and notifications.",
+      },
+      {
+        subSkill: "Reports & Dashboards",
+        proficiency: 70,
+        description:
+          "Used burndown charts, velocity reports, and custom dashboards for performance tracking.",
+      },
+    ],
+  },
+  {
+    name: "Material UI",
+    proficiency: 75,
+    category: "frontend",
+    icon: "materialui",
+    subskills: [
+      {
+        subSkill: "Component Customization",
+        proficiency: 85,
+        description:
+          "Customized MUI components using theme overrides and `sx` prop for styling consistency.",
+      },
+      {
+        subSkill: "Theming",
+        proficiency: 80,
+        description:
+          "Created responsive and dark/light themes using MUI’s theming system.",
+      },
+      {
+        subSkill: "Data Grid & Tables",
+        proficiency: 70,
+        description:
+          "Implemented interactive tables using MUI Data Grid with features like sorting and pagination.",
+      },
+      {
+        subSkill: "Form Controls",
+        proficiency: 75,
+        description:
+          "Used MUI form controls with validation libraries like React Hook Form and Yup.",
+      },
+    ],
+  },
+  {
+    name: "Storybook",
+    proficiency: 70,
+    category: "frontend",
+    icon: "storybook",
+    subskills: [
+      {
+        subSkill: "Component Isolation",
+        proficiency: 80,
+        description:
+          "Built and tested components in isolation for rapid UI development and debugging.",
+      },
+      {
+        subSkill: "Documentation",
+        proficiency: 75,
+        description:
+          "Generated visual and interactive documentation for UI components using MDX and stories.",
+      },
+      {
+        subSkill: "Addons & Controls",
+        proficiency: 70,
+        description:
+          "Used addons like Actions, Controls, and Knobs to enhance component interaction and testing.",
       }
+    ],
+  },
+  {
+    name: "Trello",
+    proficiency: 85,
+    category: "other",
+    icon: "trello",
+    subskills: [
+      {
+        subSkill: "Task Management",
+        proficiency: 90,
+        description:
+          "Used Trello boards to manage personal and team project tasks with labels and checklists.",
+      },
+      {
+        subSkill: "Custom Workflows",
+        proficiency: 80,
+        description:
+          "Created custom workflows using lists, cards, and automation to reflect real-world processes.",
+      },
+    ],
+  },
+  {
+    name: "Visual Studio Code",
+    proficiency: 90,
+    category: "other",
+    icon: "visualstudio",
+    subskills: [
+      {
+        subSkill: "Extensions & Plugins",
+        proficiency: 95,
+        description:
+          "Used essential extensions like Prettier, ESLint, GitLens, and Tailwind IntelliSense for enhanced productivity.",
+      },
+      {
+        subSkill: "Debugging",
+        proficiency: 85,
+        description:
+          "Efficiently debugged JavaScript/TypeScript and Node.js apps using VS Code’s integrated debugger.",
+      },
+      {
+        subSkill: "Customization & Snippets",
+        proficiency: 90,
+        description:
+          "Customized keybindings, themes, and created user-defined snippets for reusable code blocks.",
+      },
     ],
   },
 ];

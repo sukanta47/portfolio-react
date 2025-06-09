@@ -15,18 +15,10 @@ import LanguagesIcon from "../assets/LanguageIcon.svg?react";
 import BookWrite from "../assets/write.svg?react";
 import Speak from "../assets/speak.svg?react";
 import PopoverLink from "./PopoverLink";
-import HorizontalBarGraph from "./HorizontalBarGraph";
 import StepProgressBar from "./StepProgressBar/StepProgressBar";
 
 const About: React.FC = () => {
   const { aboutMe } = folioData;
-  const performanceData = [
-    { label: "Design", value: 85, color: "#4285F4" },
-    { label: "Development", value: 92, color: "#34A853" },
-    { label: "Marketing", value: 78, color: "#FBBC05" },
-    { label: "Sales", value: 65, color: "#EA4335" },
-    { label: "Support", value: 88, color: "#673AB7" },
-  ];
 
   return (
     <section id="about" className="section bg-white dark:bg-dark-800">
@@ -69,7 +61,7 @@ const About: React.FC = () => {
 
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-full bg-primary-100 dark:bg-primary-900/30">
+                <div className="p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg">
                   <MapPin className="h-5 w-5 text-primary-500" />
                 </div>
                 <div>
@@ -82,7 +74,7 @@ const About: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-full bg-primary-100 dark:bg-primary-900/30">
+                <div className="p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg">
                   <Mail className="h-5 w-5 text-primary-500" />
                 </div>
                 <div>
@@ -95,7 +87,7 @@ const About: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-full bg-primary-100 dark:bg-primary-900/30">
+                <div className="p-2 rounded-full  bg-white dark:bg-gray-800 shadow-lg">
                   <Phone className="h-5 w-5 text-primary-500" />
                 </div>
                 <div>
@@ -142,15 +134,24 @@ const About: React.FC = () => {
                         value={Number(lang.score)}
                       />
                       <div className="flex justify-between w-1/3 gap-2">
-                        <span className="flex flex-col justify-center" title="can read">
+                        <span
+                          className="flex flex-col justify-center"
+                          title="can read"
+                        >
                           <BookOpenCheck className="h-5 w-5 m-d:h-3 m-d:w-3 text-primary-500" />
                           <span className="text-[8px]">Read</span>
                         </span>
-                        <span className="flex flex-col justify-center" title="can write">
+                        <span
+                          className="flex flex-col justify-center"
+                          title="can write"
+                        >
                           <BookWrite className="h-5 w-5 m-d:h-3 m-d:w-3 fill-primary-500" />
                           <span className="text-[8px]">Write</span>
                         </span>
-                        <span className="flex flex-col justify-center" title="can speak">
+                        <span
+                          className="flex flex-col justify-center"
+                          title="can speak"
+                        >
                           <Speak className="m-d:h-3 m-d:w-3 h-5 w-5 fill-primary-500" />
                           <span className="text-[8px]">Speak</span>
                         </span>
@@ -229,7 +230,21 @@ const About: React.FC = () => {
                       </div>
                     </div>
                     <p className="text-gray-600 dark:text-gray-400">
-                      {edu.institution}
+                      <a
+                        className="text-primary-400 dark:text-primary-600 hover:text-primary-500 dark:hover:text-primary-500"
+                        href={edu?.instituteUrl ?? "#"}
+                        target="_blank"
+                      >
+                        {edu.institution}
+                      </a>
+                      {" | "}
+                      <a
+                        className="text-primary-400 dark:text-primary-600 hover:text-primary-500 dark:hover:text-primary-500"
+                        href={edu?.universityUrl}
+                        target="_blank"
+                      >
+                        {edu.university}
+                      </a>
                     </p>
                     <p className="text-sm font-semibold text-gray-600 dark:text-gray-400">
                       {edu.gpa}

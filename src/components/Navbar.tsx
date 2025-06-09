@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
       : 10;
   const x_animate =
     breakpoint === "xs"
-      ? 26
+      ? 34
       : breakpoint === "sm"
       ? 56
       : breakpoint === "md"
@@ -41,6 +41,14 @@ const Navbar: React.FC = () => {
       : breakpoint === "xl"
       ? 44
       : 10;
+
+      const y_animate = breakpoint === "xs"
+      ? -10
+      : breakpoint === "sm"
+      ? -6
+      : breakpoint === "md"
+      ? -2
+      : 0;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,87 +101,98 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-4 md:gap-20">
-            <div className="flex flex-col justify-center gap-1 h-[78px]">
-              <motion.div
-                className="ease-in-out hero-content max-w-2xl"
-                animate={{
-                  y: scrolledToShowTitle ? 2 : 0,
-                  x: scrolledToShowTitle
-                    ? breakpoint === "xs"
-                      ? 12
-                      : breakpoint === "sm"
-                      ? 8
-                      : breakpoint === "md"
-                      ? -4
-                      : breakpoint === "lg"
-                      ? -10
-                      : breakpoint === "xl"
-                      ? -12
-                      : -14
-                    : 0,
-                  scale: scrolledToShowTitle ? 1.3 : 1,
-                }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+        <div className="grid grid-cols-6 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-4 h-16">
+          {/* <div className="flex items-center gap-4 md:gap-20">
+            
+          </div> */}
+          <div className="flex flex-col col-span-5 sm:col-span-1 md:col-span-2 lg:col-span-1 justify-center items-start px-auto gap-1 h-[78px]">
+            <motion.div
+              className="ease-in-out hero-content max-w-2xl"
+              animate={{
+                y: scrolledToShowTitle  
+                ? breakpoint === "xs"
+                    ? -4
+                    : breakpoint === "sm" ? 0 
+                    : 2 
+                  : 0,
+                x: scrolledToShowTitle
+                  ? breakpoint === "xs"
+                    ? 18
+                    : breakpoint === "sm"
+                    ? 8
+                    : breakpoint === "md"
+                    ? -4
+                    : breakpoint === "lg"
+                    ? -10
+                    : breakpoint === "xl"
+                    ? -12
+                    : -14
+                  : 0,
+                scale: scrolledToShowTitle ? 1.3 : 1,
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <a
+                href="#home"
+                className="ease-in-out flex items-center gap-2 text-primary-500 font-bold text-xl"
               >
-                <a
-                  href="#home"
-                  className="ease-in-out flex items-center gap-2 text-primary-500 font-bold text-xl"
+                {/* <Code className="h-6 w-6" /> */}
+                <img
+                  src="src/assets/sb-logo-blue.png"
+                  className={`${scrolledToShowTitle ? "h-8 w-8" : "h-12 w-12"}`}
+                  alt="logo"
+                ></img>
+                <span className="dark:text-white">{aboutMe.name}</span>
+              </a>
+            </motion.div>
+            <AnimatePresence initial={false}>
+              {scrolledToShowTitle && (
+                <motion.div
+                  key="hero-badge"
+                  className="ease-in-out hero-content max-w-2xl flex items-center"
+                  initial={{ y: 10, opacity: 0, scale: 1.2, x: x_initial }}
+                  animate={{ y: y_animate, opacity: 1, scale: 1, x: x_animate }} // shift left
+                  exit={{ y: 10, opacity: 0, scale: 1.2, x: x_initial }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeInOut",
+                    scale: { type: "tween", duration: 0.4, bounce: 0.2 },
+                  }}
                 >
-                  <Code className="h-6 w-6" />
-                  <span className="dark:text-white">{aboutMe.name}</span>
+                  <motion.span>
+                    <Badge text={aboutMe.title} />
+                  </motion.span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          <div className="hidden md:block col-span-2 md:col-span-3 lg:col-span-2 justify-self-center lg:space-between self-center max-w-lg">
+            <div className="ml-10 flex items-baseline gap-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleItemClick(item.href);
+                  }}
+                  className={`${
+                    activeSection === item.href.substring(1)
+                      ? "nav-link-active"
+                      : "nav-link"
+                  }`}
+                  aria-current={
+                    activeSection === item.href.substring(1)
+                      ? "page"
+                      : undefined
+                  }
+                >
+                  {item.title}
                 </a>
-              </motion.div>
-              <AnimatePresence initial={false}>
-                {scrolledToShowTitle && (
-                  <motion.div
-                    key="hero-badge"
-                    className="ease-in-out hero-content max-w-2xl flex items-center"
-                    initial={{ y: 10, opacity: 0, scale: 1.2, x: x_initial }}
-                    animate={{ y: 0, opacity: 1, scale: 1, x: x_animate }} // shift left
-                    exit={{ y: 10, opacity: 0, scale: 1.2, x: x_initial }}
-                    transition={{
-                      duration: 0.4,
-                      ease: "easeInOut",
-                      scale: { type: "tween", duration: 0.4, bounce: 0.2 },
-                    }}
-                  >
-                    <motion.span>
-                      <Badge text={aboutMe.title} />
-                    </motion.span>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleItemClick(item.href);
-                    }}
-                    className={`${
-                      activeSection === item.href.substring(1)
-                        ? "nav-link-active"
-                        : "nav-link"
-                    }`}
-                    aria-current={
-                      activeSection === item.href.substring(1)
-                        ? "page"
-                        : undefined
-                    }
-                  >
-                    {item.title}
-                  </a>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:block justify-self-end self-center">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-dark-600 transition-colors duration-300"
@@ -190,10 +209,10 @@ const Navbar: React.FC = () => {
               )}
             </button>
           </div>
-          <div className="flex md:hidden">
+          <div className="flex gap-2 md:hidden justify-self-end self-center">
             <button
               onClick={toggleTheme}
-              className="p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-dark-600 transition-colors duration-300"
+              className="rounded-full hover:bg-gray-200 dark:hover:bg-dark-600 transition-colors duration-300"
               aria-label={
                 theme === "dark"
                   ? "Switch to light mode"
@@ -209,7 +228,7 @@ const Navbar: React.FC = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+              className="pr-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >

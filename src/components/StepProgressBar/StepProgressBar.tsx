@@ -15,8 +15,8 @@ const StepProgressBar: React.FC<StepProgressBarProps> = ({
   const stepValue = Math.floor(value);
   return (
     <div className="step-progress-bar">
-      {steps.map((step) => (
-        <div key={step} className={`step-box`}>
+      {steps.map((step,index) => (
+        <div key={step} className={`step-box`} title={String(index+1)}>
           <div
             className={`step-box ${step <= stepValue ? "active" : ""}`}
             style={

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { folioData } from "../data";
+import { folioData } from "../../data";
 import "./Skills.scss";
 import SubSkills from "./SubSkills";
+import SkillIcon from "./SkillIcon";
+import { Quote } from "lucide-react";
 
 const Skills: React.FC = () => {
   const { skills } = folioData;
@@ -94,10 +96,10 @@ const Skills: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => handleAccordion(index)}
-                    className="focus:outline-none bg-transparent border-none p-0 m-0 text-inherit"
+                    className="focus:outline-none bg-transparent border-none p-0 m-0 text-inherit flex items-center gap-2"
                     aria-label={`Toggle details for ${skill.name}`}
                   >
-                    {skill.name}
+                    <SkillIcon name={skill.icon ?? ""} size={32}/>{skill.name}
                   </button>
                 </h3>
                 <span className="flex gap-5">
@@ -142,8 +144,9 @@ const Skills: React.FC = () => {
                     transition={{ duration: 0.3 }}
                     className="px-4 overflow-hidden"
                   >
+                    {skill.description &&<p className="text-gray-500 text-xs/4 italic p-2 mt-2 bg-gray-100 rounded-md"><Quote className="h-6 w-6" />{skill.description}</p>}
                     <div className="py-4 skill-chip">
-                      <SubSkills subskills={skill.details ?? []} />
+                      <SubSkills subskills={skill.subskills ?? []} />
                     </div>
                   </motion.div>
                 )}

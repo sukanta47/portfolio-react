@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronsDown, Heart } from "lucide-react";
 import { folioData } from '../data';
-import bohemianMan from "../assets/bohemian-man-with-his-arms-crossed-1.png";
+import bohemianMan from "../assets/sukanta-black.png";
 import vectorImg from "../assets/vector.svg";
 import { confettiShoot } from "./ConfettiShoot";
 
@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
         >
           {!scrolledToShowTitle && (
             <motion.span
-              className="inline-flex self-start px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 text-sm font-medium xl:absolute xl:top-[128px]"
+              className="inline-flex self-start sm:ml-4 px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 text-sm font-medium xl:absolute xl:top-[128px]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.4 }}

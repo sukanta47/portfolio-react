@@ -17,9 +17,11 @@ export interface SkillDetails {
 }
 export interface Skill {
   name: string;
+  icon?: string;
+  description?: string;
   proficiency: number; // 0-100
   category: 'frontend' | 'backend' | 'design' | 'other';
-  details?: SkillDetails[];
+  subskills?: SkillDetails[];
 }
 
 export interface SocialLink {

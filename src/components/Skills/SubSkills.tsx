@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { SkillDetails } from "../types";
+import { SkillDetails } from "../../types";
 
 interface SubSkillsProps {
   subskills: SkillDetails[];
