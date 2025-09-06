@@ -17,20 +17,9 @@ const Skills: React.FC = () => {
     { value: "all", label: "All Skills" },
     { value: "frontend", label: "Frontend" },
     { value: "backend", label: "Backend" },
-    { value: "design", label: "Design" },
+    // { value: "design", label: "Design" },
     { value: "other", label: "Other" },
   ];
-  const breakpoint = useBreakpoint();
-  const iconSize =
-    breakpoint === "xs"
-      ? 24
-      : breakpoint === "sm"
-      ? 24
-      : breakpoint === "md"
-      ? 28
-      : breakpoint === "xl"
-      ? 44
-      : 32;
       
   useEffect(() => {
     if (filter === "all") {

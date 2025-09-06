@@ -1,12 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  ChevronLeft,
-  ChevronRight,
-  ChevronsDown,
-  Quote,
-  Star,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { folioData } from "../data";
 import RatingReviewModal from "./RatingReviewModal";
 import reviewsData from "../data/reviews.json";
@@ -20,30 +14,20 @@ type Review = {
   review: string;
   rating: number;
   featured: boolean;
+  sex: string;
 };
 const Testimonials: React.FC = () => {
-  const { testimonials } = folioData;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [viewAll, setViewAll] = useState(false);
   const [ratingModalOpen, setRatingModalOpen] = useState(false);
-  const [allReviews, setAllReviews] = useState(reviewsData);
   const [featuredReviews, setFeaturedReviews] = useState<Review[]>([]);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    const _featuredReviews: Review[] = allReviews
+    const _featuredReviews: Review[] = reviewsData
       .filter((r) => r.featured)
-      .slice(0, 3);
-    _featuredReviews.push({
-      id: 4,
-      name: "Thijs van der",
-      email: "thijs.van@versuni.com",
-      designation: "Global Manager",
-      rating: 5,
-      review: "The product delivered exactly what we needed!",
-      featured: true,
-      company: "Versuni",
-      location: "Amsterdam, Netherlands",
-    });
+      .slice(0, 4);
     setFeaturedReviews(_featuredReviews);
     localStorage.setItem("reviews", JSON.stringify(reviewsData));
   }, []);
@@ -67,6 +51,14 @@ const Testimonials: React.FC = () => {
       prevIndex === featuredReviews.length - 1 ? 0 : prevIndex + 1
     );
   };
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(handleNext, 3000);
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isPaused, featuredReviews.length]);
 
   const renderReviews = () => {
     if (!featuredReviews.length) {
@@ -96,7 +88,7 @@ const Testimonials: React.FC = () => {
             </button>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
-            {allReviews.map((review) => (
+            {reviewsData.map((review) => (
               <div
                 className="bg-white dark:bg-dark-700 p-4 rounded shadow"
                 key={review.id}
@@ -133,7 +125,9 @@ const Testimonials: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.3 }}
-          className="bg-white dark:bg-dark-700 rounded-xl p-8 shadow-lg w-[18rem] sm:w-[28rem] xl:w-[56rem] lg:w-[52rem] md:w-[40rem]"
+          className="bg-white dark:bg-dark-700 rounded-xl p-8 shadow-lg lg:h-[19rem] overflow-y-none lg:w-11/12"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           {featuredReviews.length - 1 === currentIndex ? (
             <div className="flex flex-col items-center justify-center text-center gap-6 relative h-[208px]">
@@ -153,11 +147,15 @@ const Testimonials: React.FC = () => {
                 <Quote className="h-20 w-20" />
               </div>
               <img
-                src={testimonials[currentIndex].avatar}
+                src={
+                  reviewsData[currentIndex].sex === "m"
+                    ? "src/assets/avatar/male-avatar.jpg"
+                    : "src/assets/avatar/female-avatar-2.jpg"
+                }
                 alt={`featuredReviews[currentIndex].name`}
                 className="w-20 h-20 rounded-full object-cover border-4 border-white dark:border-dark-600 shadow-md"
               />
-              <p className="text-lg text-gray-700 dark:text-gray-300 relative z-10">
+              <p className="text-base text-gray-700 dark:text-gray-300 relative z-10">
                 {featuredReviews[currentIndex].review}
               </p>
               <div>
@@ -172,7 +170,6 @@ const Testimonials: React.FC = () => {
             </div>
           )}
         </motion.div>
-        {/* <div className="flex justify-between gap-3 mt-3"> */}
         <div className="flex items-center justify-center gap-3 mt-3">
           <button
             onClick={handlePrev}
@@ -206,13 +203,12 @@ const Testimonials: React.FC = () => {
           </button>
         </div>
       </div>
-      // </div>
     );
   };
 
   return (
-    <section className="section bg-gray-50 dark:bg-dark-900 py-5">
-      <div className="container-custom">
+    <section className="section bg-gray-50 dark:bg-dark-900 py-5 w-full">
+      <div className="container-custom w-full">
         <div className="text-center mb-8">
           <motion.h2
             className="heading-lg text-gray-900 dark:text-white mb-4"

@@ -46,7 +46,7 @@
   }
 
   .container-custom {
-    @apply 2xl:max-w-full px-12 pt-[24px] pb-[48px] md:pb-[24px] xs:px-8 sm:px-14 md:px-14 lg:px-16 mt-[80px] sm:mt-[84px] md:mt-[80px];
+    @apply 2xl:max-w-full px-0 pt-[24px] pb-[48px] md:pb-[24px] md:px-14 lg:px-16 mt-[84px] md:mt-[80px];
   }
 
   .heading-xl {
@@ -77,7 +77,7 @@
     @apply flex flex-col items-center md:items-start gap-2 md:gap-6;
   }
   .profile-headline {
-    @apply block text-xl text-primary-500 dark:text-primary-400 mt-2 xs:text-sm m-sm:text-base sm:text-base md:text-lg;
+    @apply block text-lg text-primary-500 dark:text-primary-400 mt-2 xs:text-sm m-sm:text-base sm:text-base md:text-lg;
     svg {
       @apply inline-block;
     }

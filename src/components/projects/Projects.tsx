@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github as GitHub, ExternalLink } from 'lucide-react';
-import { Project } from '../types';
-import { folioData } from '../data';
+import { Project } from '../../types';
+import { folioData } from '../../data';
+import ProjectCarousel from './ProjectCarousel';
 
 const Projects: React.FC = () => {
   const { projects } = folioData;
@@ -51,7 +52,7 @@ const Projects: React.FC = () => {
           </motion.p>
         </div>
         
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <button
               key={category.value}
@@ -65,9 +66,9 @@ const Projects: React.FC = () => {
               {category.label}
             </button>
           ))}
-        </div>
+        </div> */}
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -92,11 +93,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       transition={{ duration: 0.4, delay: 0.1 * index }}
     >
       <div className="relative overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-        />
+        <ProjectCarousel images={project.images} />
         <div className="absolute top-4 right-4">
           {project.featured && (
             <span className="bg-accent-500 text-white text-xs font-medium px-2.5 py-1 rounded-full">
@@ -108,7 +105,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       
       <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-4 flex-1">{project.description}</p>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 flex-1">{project.description}</p>
         
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech, techIndex) => (

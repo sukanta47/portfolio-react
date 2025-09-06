@@ -10,7 +10,6 @@
   @apply rounded-b-lg;
 }
 
-/* Optional: Add a border between accordion items */
 .accordion-item:not(:last-child) {
   @apply mb-2;
 }

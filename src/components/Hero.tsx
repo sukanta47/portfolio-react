@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronsDown, Heart } from "lucide-react";
-import { folioData } from '../data';
-import bohemianMan from "../assets/sukanta-black.png";
+import { folioData } from "../data";
+// import bohemianMan from "../assets/sukanta-black.png";
+import bohemianMan from "../assets/sukanta-b-cropped.png";
 import vectorImg from "../assets/vector.svg";
 import { confettiShoot } from "./ConfettiShoot";
 
@@ -11,11 +12,11 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
-  const {aboutMe} = folioData;
+  const { aboutMe } = folioData;
 
-  const scrollRef = useRef<HTMLDivElement>(null);  
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const handleScrollDown = ():void => {
+  const handleScrollDown = (): void => {
     confettiShoot("realistic");
     // confettiShoot("pride");
     // confettiShoot();
@@ -45,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
         >
           {!scrolledToShowTitle && (
             <motion.span
-              className="inline-flex self-start sm:ml-4 px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 text-sm font-medium xl:absolute xl:top-[128px]"
+              className="inline-flex self-start ml-6 lg:ml-0 px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 text-sm font-medium xl:absolute xl:top-[128px]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.4 }}
@@ -53,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
               {aboutMe.title}
             </motion.span>
           )}
-          <section className="flex flex-col items-center gap-3 pt-0 pb-0 px-3 relative sm:gap-8 md:gap-15 lg:gap-20 sm:flex-col md:flex-col lg:flex-row xl:flex-row-reverse sm:px-6 md:px-8 md:pt-4 lg:pt-8">
+          <section className="flex flex-col items-center gap-3 pt-0 pb-0 px-3 md:px-8 lg:px-0 relative sm:gap-8 md:gap-12 lg:gap-14 lg:flex-row xl:flex-row-reverse md:pt-4 lg:pt-8">
             <div className="flex flex-col items-start gap-6 xs:gap-2 m-sm:gap-2 sm:gap-4 relative flex-1 grow">
               <motion.h1
                 className="heading-lg text-gray-900 dark:text-white mb-6 xs:mb-2 m-sm:mb-2 sm:mb-4"
@@ -62,14 +63,14 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
                 Hi, I'm {aboutMe.name}
-                <span className="profile-headline">
-                  I build mesmerizing web apps with{" "}
-                  <Heart className="h-4 w-4 text-red-500 fill-current" />
+                <span className="profile-headline font-normal text-gray-500">
+                  Lead Frontend Developer | Turning ideas into seamless digital
+                  experiences{" "}
                 </span>
               </motion.h1>
 
               <motion.p
-                className="text-sm sm:text-base md:text-lg text-gray-700 dark:text-gray-300 md:mb-4 lg:mb-8 leading-relaxed"
+                className="text-sm lg:text-base xl:text-lg text-gray-700 dark:text-gray-300 md:mb-4 lg:mb-8 leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
@@ -78,14 +79,20 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
               </motion.p>
             </div>
             <div className="relative">
-              <div className="flex items-center justify-center relative w-[32rem] h-[20rem] xs:w-[15rem] xs:h-[18rem] sm:w-[22rem] sm:h-[18rem] md:w-[24rem] md:h-[20rem] lg:w-[26rem] lg:h-[20rem] xl:w-[32rem] xl:h-[20rem]">
-                <img
-                  className="absolute h-auto w-auto left-0"
+              <div className="flex items-center justify-center relative h-[18rem] md:h-[20rem] lg:w-[26rem] lg:h-[20rem] xl:w-[32rem] xl:h-[20rem]">
+                <motion.img
+                  initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                  animate={{ opacity: 1, scale: 1.1, y: 0 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className="relative h-auto w-auto top-0 lg:left[152px] lg:top[-118px] scale-110 md:scale-100"
                   alt="Vector"
                   src={vectorImg}
                 />
-                <img
-                  className="absolute h-[18rem] w-[12rem] xs:h-[16] xs:w-[10] sm:h-[17] sm:w-[12] md:h-[18] md:w-[12] lg:h-[20] lg:w-[14] top-0"
+                <motion.img
+                  initial={{ opacity: 0, y: 80 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+                  className="absolute h-[18rem] md:h-[21rem] lg:h-[28rem] top-0 md:top-[-10px] lg:top-[-122px] xl:top-[-110px]"
                   alt="Bohemian man with"
                   src={bohemianMan}
                 />
@@ -105,7 +112,10 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
               View My Work
               <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#contact" className="btn btn-outline text-sm md:text-base lg:text-lg">
+            <a
+              href="#contact"
+              className="btn btn-outline text-sm md:text-base lg:text-lg"
+            >
               Contact Me
             </a>
           </motion.div>

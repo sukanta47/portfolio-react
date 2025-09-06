@@ -1,13 +1,3 @@
-
-// import {
-//   navItems,
-//   socialLinks,
-//   skills,
-//   projects,
-//   testimonials,
-//   aboutMe
-// } from "./data-john";
-
 import {
   navItems,
   socialLinks,

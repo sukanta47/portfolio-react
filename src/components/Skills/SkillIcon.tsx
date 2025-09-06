@@ -27,6 +27,8 @@ import MaterialUIIcon from "../../assets/skill-icons/material-ui.svg?react";
 import StorybookIcon from "../../assets/skill-icons/storybook.svg?react";
 import TrelloIcon from "../../assets/skill-icons/trello.svg?react";
 import VSCodeIcon from "../../assets/skill-icons/visual-studio.svg?react";
+import ZustandIcon from "../../assets/skill-icons/zustand.svg?react";
+import SupabaseIcon from "../../assets/skill-icons/supabase.svg?react";
 
 const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   angular: AngularIcon,
@@ -37,7 +39,7 @@ const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   html5: HTMLIcon,
   css3: CSSIcon,
   redux: ReduxIcon,
-  nextjs: NextIcon, // Assuming Next.js uses React icon
+  nextjs: NextIcon,
   tailwindcss: TailwindIcon,
   sass: SassIcon,
   nodejs: NodeIcon,
@@ -55,7 +57,9 @@ const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   materialui: MaterialUIIcon,
   storybook: StorybookIcon,
   trello: TrelloIcon,
-  visualstudio: VSCodeIcon
+  visualstudio: VSCodeIcon,
+  zustand: ZustandIcon,
+  supabase: SupabaseIcon,
 };
 
 type SkillIconProps = {
@@ -69,7 +73,7 @@ const SkillIcon: React.FC<SkillIconProps> = ({ name, className }) => {
   return IconComponent ? (
     <IconComponent className={className} />
   ) : (
-    <span className="text-red-500">Icon not found: {name}</span>
+    <span className="text-red-500 text-xs">Icon not found: {name}</span>
   );
 };
 

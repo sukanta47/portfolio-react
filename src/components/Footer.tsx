@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
   
   return (
     <footer className="bg-gray-900 text-white py-12">
-      <div className="container-custom">
+      <div className="container-custom mt-0">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold mb-4">{aboutMe.name}</h3>
@@ -66,8 +66,7 @@ const Footer: React.FC = () => {
         
         <div className="pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-500 flex items-center justify-center gap-1">
-            &copy; {currentYear} {aboutMe.name}. All rights reserved. Made with 
-            <Heart className="h-4 w-4 text-red-500 fill-current" />
+            &copy; {currentYear} {aboutMe.name}. All rights reserved.
           </p>
         </div>
       </div>

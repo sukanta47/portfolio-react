@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Projects from './components/Projects';
+import Projects from './components/projects/Projects';
 import Skills from './components/Skills/Skills';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
-import Layout from './layout/Layout';
 import { useAppSelector } from './app/hooks';
 import WeatherCard from './features/WeatherCard/WeatherCard';
 
@@ -49,7 +48,6 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
-          {/* <WeatherCard className="absolute right-5 top-[94px] z-[11] sm:right-2 md:right-3 lg:right-5 xl:right-6"/> */}
           <Hero scrolledToShowTitle={isScrolledToShowTitle}/>
           <About />
           <Skills />
@@ -59,7 +57,6 @@ function App() {
         </main>
         <Footer />
         <ScrollToTop />
-        {/* <Layout/> */}
       </div>
     </ThemeProvider>
   );

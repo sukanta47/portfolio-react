@@ -5,10 +5,11 @@
     "email": "arushi.sethi@hurix.com",
     "designation": "Product Manager",
     "rating": 5,
-    "review": "The product delivered exactly what we needed!",
+    "review": "The product delivered exactly what we needed. It saved us time and made our workflow so much smoother!",
     "featured": true,
     "company": "Hurix Systems",
-    "location": "Mumbai, India"
+    "location": "Mumbai, India",
+    "sex":"f"
   },
   {
     "id": 2,
@@ -16,21 +17,23 @@
     "email": "shreeshakeshava@gmail.com",
     "designation": "Owner",
     "rating": 5,
-    "review": "Outstanding experience!",
+    "review": "The development process was very smooth, with everything delivered on time. The UI looked great and the support we received was excellent!",
     "featured": true,
     "company": "Jagadeva Kutumbakam (NGO)",
-    "location": "Bengaluru, India"
+    "location": "Bengaluru, India",
+    "sex":"m"
   },
   {
     "id": 3,
     "name": "Manya M",
     "email": "manya.m@fireflink.com",
-    "designation": "Product Manager",
+    "designation": "Chief Product Officer",
     "rating": 5,
-    "review": "Loved the interface and responsiveness.",
+    "review": "Sukanta was the core developer of Fireflink and has been part of the product through every phase. From designing the tree structure to execution results, his contributions shaped almost every aspect of the platform.",
     "featured": true,
     "company": "Fireflink",
-    "location": "Bengaluru, India"
+    "location": "Bengaluru, India",
+    "sex":"f"
   },
   {
     "id": 4,
@@ -38,9 +41,22 @@
     "email": "thijs.van@versuni.com",
     "designation": "Global Manager",
     "rating": 5,
-    "review": "The product delivered exactly what we needed!",
+    "review": "He designed an internal tool for Philips to simplify the naming convention process for Proposition Managers. The solution was well thought out and highly effective.",
     "featured": true,
     "company": "Versuni",
-    "location": "Amsterdam, Netherlands"
+    "location": "Amsterdam, Netherlands",
+    "sex":"m"
+  },
+  {
+    "id": 5,
+    "name": "Upasana Das",
+    "email": "upasana@knowledgenetworks.org",
+    "designation": "Content Specialist",
+    "rating": 5,
+    "review": "Amazing experience overall! The design and usability really stood out and made our work so much easier.",
+    "featured": true,
+    "company": "Knowledge Networks",
+    "location": "Reston, Virginia, USA",
+    "sex":"f"
   }
-]
+] 

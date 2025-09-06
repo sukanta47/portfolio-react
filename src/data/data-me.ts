@@ -47,7 +47,8 @@ export const skills: Skill[] = [
     proficiency: 90,
     category: "frontend",
     icon: "reactjs",
-    description:"Proficient in React.js for building scalable, component-driven UIs with modern features like hooks, lazy loading, and Redux Toolkit. Focused on performance, accessibility, and clean architecture.",
+    description:
+      "Proficient in React.js for building scalable, component-driven UIs with modern features like hooks, lazy loading, and Redux Toolkit. Focused on performance, accessibility, and clean architecture.",
     subskills: [
       {
         subSkill: "framer-motion",
@@ -77,7 +78,7 @@ export const skills: Skill[] = [
     subskills: [
       {
         subSkill: "Type Annotations",
-        proficiency: 90,
+        proficiency: 80,
         description:
           "Strong understanding of type annotations for variables, functions, and complex data structures.",
       },
@@ -182,13 +183,45 @@ export const skills: Skill[] = [
         subSkill: "Redux Toolkit (RTK)",
         proficiency: 85,
         description:
-          "I have extensive experience state management using Redux as RTK. I am proficient in writing slices and its corresponding reducers.",
+          "Extensive experience in managing application state efficiently using Redux Toolkit.",
       },
       {
-        subSkill: "RTK/Query",
+        subSkill: "Slices & Reducers",
         proficiency: 80,
         description:
-          "I have experience with React Query for data fetching and caching, which helps in managing server state efficiently.",
+          "Proficient in structuring state with slices and implementing reducers for predictable state transitions.",
+      },
+      {
+        subSkill: "Middleware & Async Logic",
+        proficiency: 75,
+        description:
+          "Implemented middleware like Redux Thunk for handling async operations and side effects.",
+      },
+    ],
+  },
+  {
+    name: "Zustand",
+    proficiency: 85,
+    category: "frontend",
+    icon: "zustand",
+    subskills: [
+      {
+        subSkill: "Redux DevTools Integration",
+        proficiency: 85,
+        description:
+          "Experience integrating with Redux DevTools to trace and debug state changes in real time.",
+      },
+      {
+        subSkill: "Slices & Reducers",
+        proficiency: 80,
+        description:
+          "Skilled at structuring modular slices and reducers for maintainable state management.",
+      },
+      {
+        subSkill: "StateCreator & Middleware",
+        proficiency: 80,
+        description:
+          "Proficient in creating custom stores using StateCreator and extending them with middlewares like persist, logger, and immer.",
       },
     ],
   },
@@ -242,50 +275,50 @@ export const skills: Skill[] = [
       },
     ],
   },
-  {
-    name: "Vue.js",
-    proficiency: 80,
-    category: "frontend",
-    icon: "vuejs",
-    subskills: [
-      {
-        subSkill: "Vue Components & Composition API",
-        proficiency: 85,
-        description:
-          "Proficient in building scalable applications using Vue’s Single File Components and the modern Composition API.",
-      },
-      {
-        subSkill: "Vue Router",
-        proficiency: 80,
-        description:
-          "Experience in configuring routing, nested routes, route guards, and lazy loading components using Vue Router.",
-      },
-      {
-        subSkill: "Reactive Forms & v-model",
-        proficiency: 85,
-        description:
-          "Skilled in creating forms using `v-model` with reactive data binding, validation, and form handling logic.",
-      },
-      {
-        subSkill: "Composition API & Reusability",
-        proficiency: 80,
-        description:
-          "Built reusable logic across components using `setup()`, `ref`, `computed`, and custom composables.",
-      },
-      {
-        subSkill: "Vue Lifecycle & Directives",
-        proficiency: 85,
-        description:
-          "Strong knowledge of Vue’s lifecycle hooks and built-in directives like `v-if`, `v-for`, and `v-bind`.",
-      },
-      {
-        subSkill: "Vue CLI / Vite",
-        proficiency: 80,
-        description:
-          "Experienced in project scaffolding, development, and builds using Vue CLI and modern tooling like Vite.",
-      },
-    ],
-  },
+  // {
+  //   name: "Vue.js",
+  //   proficiency: 80,
+  //   category: "frontend",
+  //   icon: "vuejs",
+  //   subskills: [
+  //     {
+  //       subSkill: "Vue Components & Composition API",
+  //       proficiency: 85,
+  //       description:
+  //         "Proficient in building scalable applications using Vue’s Single File Components and the modern Composition API.",
+  //     },
+  //     {
+  //       subSkill: "Vue Router",
+  //       proficiency: 80,
+  //       description:
+  //         "Experience in configuring routing, nested routes, route guards, and lazy loading components using Vue Router.",
+  //     },
+  //     {
+  //       subSkill: "Reactive Forms & v-model",
+  //       proficiency: 85,
+  //       description:
+  //         "Skilled in creating forms using `v-model` with reactive data binding, validation, and form handling logic.",
+  //     },
+  //     {
+  //       subSkill: "Composition API & Reusability",
+  //       proficiency: 80,
+  //       description:
+  //         "Built reusable logic across components using `setup()`, `ref`, `computed`, and custom composables.",
+  //     },
+  //     {
+  //       subSkill: "Vue Lifecycle & Directives",
+  //       proficiency: 85,
+  //       description:
+  //         "Strong knowledge of Vue’s lifecycle hooks and built-in directives like `v-if`, `v-for`, and `v-bind`.",
+  //     },
+  //     {
+  //       subSkill: "Vue CLI / Vite",
+  //       proficiency: 80,
+  //       description:
+  //         "Experienced in project scaffolding, development, and builds using Vue CLI and modern tooling like Vite.",
+  //     },
+  //   ],
+  // },
   {
     name: "Next.js",
     proficiency: 75,
@@ -400,134 +433,179 @@ export const skills: Skill[] = [
       },
     ],
   },
+  // {
+  //   name: "Node.js",
+  //   proficiency: 60,
+  //   category: "backend",
+  //   icon: "nodejs",
+  //   subskills: [
+  //     {
+  //       subSkill: "REST API Development",
+  //       proficiency: 80,
+  //       description:
+  //         "Experience building RESTful APIs with Node.js and Express.",
+  //     },
+  //     {
+  //       subSkill: "File System",
+  //       proficiency: 70,
+  //       description:
+  //         "Worked with Node's file system module for various I/O operations.",
+  //     },
+  //     {
+  //       subSkill: "Streams",
+  //       proficiency: 65,
+  //       description:
+  //         "Basic understanding of working with streams for handling large datasets.",
+  //     },
+  //     {
+  //       subSkill: "Error Handling",
+  //       proficiency: 75,
+  //       description:
+  //         "Implemented robust error handling middleware and patterns.",
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Express",
+  //   proficiency: 50,
+  //   category: "backend",
+  //   icon: "expressjs",
+  //   subskills: [
+  //     {
+  //       subSkill: "Middleware",
+  //       proficiency: 75,
+  //       description:
+  //         "Experience creating and using middleware for various application needs.",
+  //     },
+  //     {
+  //       subSkill: "Routing",
+  //       proficiency: 80,
+  //       description:
+  //         "Proficient in setting up and organizing routes in Express applications.",
+  //     },
+  //     {
+  //       subSkill: "Authentication",
+  //       proficiency: 65,
+  //       description:
+  //         "Implemented JWT-based authentication in Express applications.",
+  //     },
+  //     {
+  //       subSkill: "Error Handling",
+  //       proficiency: 70,
+  //       description:
+  //         "Configured custom error handling middleware for API responses.",
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "MongoDB",
+  //   proficiency: 65,
+  //   category: "backend",
+  //   icon: "mongodb",
+  //   subskills: [
+  //     {
+  //       subSkill: "CRUD Operations",
+  //       proficiency: 70,
+  //       description:
+  //         "Experience performing all basic CRUD operations with MongoDB.",
+  //     },
+  //     {
+  //       subSkill: "Aggregation",
+  //       proficiency: 60,
+  //       description:
+  //         "Basic understanding of aggregation pipelines for complex queries.",
+  //     },
+  //     {
+  //       subSkill: "Indexing",
+  //       proficiency: 55,
+  //       description:
+  //         "Knowledge of creating indexes for performance optimization.",
+  //     },
+  //     {
+  //       subSkill: "Mongoose ODM",
+  //       proficiency: 65,
+  //       description:
+  //         "Experience working with Mongoose for schema validation and modeling.",
+  //     },
+  //   ],
+  // },
   {
-    name: "Node.js",
+    name: "Supabase",
     proficiency: 60,
     category: "backend",
-    icon: "nodejs",
+    icon: "supabase",
     subskills: [
       {
-        subSkill: "REST API Development",
-        proficiency: 80,
+        subSkill: "Database",
+        proficiency: 60,
         description:
-          "Experience building RESTful APIs with Node.js and Express.",
-      },
-      {
-        subSkill: "File System",
-        proficiency: 70,
-        description:
-          "Worked with Node's file system module for various I/O operations.",
-      },
-      {
-        subSkill: "Streams",
-        proficiency: 65,
-        description:
-          "Basic understanding of working with streams for handling large datasets.",
-      },
-      {
-        subSkill: "Error Handling",
-        proficiency: 75,
-        description:
-          "Implemented robust error handling middleware and patterns.",
-      },
-    ],
-  },
-  {
-    name: "Express",
-    proficiency: 50,
-    category: "backend",
-    icon: "expressjs",
-    subskills: [
-      {
-        subSkill: "Middleware",
-        proficiency: 75,
-        description:
-          "Experience creating and using middleware for various application needs.",
-      },
-      {
-        subSkill: "Routing",
-        proficiency: 80,
-        description:
-          "Proficient in setting up and organizing routes in Express applications.",
+          "Experience designing schemas, managing relations, and writing SQL functions in Supabase’s Postgres database.",
       },
       {
         subSkill: "Authentication",
-        proficiency: 65,
-        description:
-          "Implemented JWT-based authentication in Express applications.",
-      },
-      {
-        subSkill: "Error Handling",
-        proficiency: 70,
-        description:
-          "Configured custom error handling middleware for API responses.",
-      },
-    ],
-  },
-  {
-    name: "MongoDB",
-    proficiency: 65,
-    category: "backend",
-    icon: "mongodb",
-    subskills: [
-      {
-        subSkill: "CRUD Operations",
-        proficiency: 70,
-        description:
-          "Experience performing all basic CRUD operations with MongoDB.",
-      },
-      {
-        subSkill: "Aggregation",
         proficiency: 60,
         description:
-          "Basic understanding of aggregation pipelines for complex queries.",
+          "Implemented Supabase Auth for user sign-up, login, and role-based access with JWT handling.",
       },
       {
-        subSkill: "Indexing",
-        proficiency: 55,
+        subSkill: "Edge Functions",
+        proficiency: 70,
         description:
-          "Knowledge of creating indexes for performance optimization.",
+          "Built and deployed Supabase Edge Functions for serverless backend logic and real-time notifications.",
       },
       {
-        subSkill: "Mongoose ODM",
+        subSkill: "Realtime & Channels",
         proficiency: 65,
         description:
-          "Experience working with Mongoose for schema validation and modeling.",
+          "Integrated Supabase Realtime for live updates and notifications using Postgres changes and channel subscriptions.",
+      },
+      {
+        subSkill: "Storage",
+        proficiency: 60,
+        description:
+          "Managed Supabase Storage for handling file uploads such as images, documents, and media assets.",
+      },
+      {
+        subSkill: "Row-Level Security (RLS)",
+        proficiency: 55,
+        description:
+          "Configured Row-Level Security policies for secure, fine-grained access control across tables.",
       },
     ],
   },
-  {
-    name: "Figma",
-    proficiency: 85,
-    category: "design",
-    icon: "figma",
-    subskills: [
-      {
-        subSkill: "Component Libraries",
-        proficiency: 90,
-        description:
-          "Created and maintained reusable component libraries in Figma.",
-      },
-      {
-        subSkill: "Auto Layout",
-        proficiency: 85,
-        description:
-          "Extensive use of auto layout for responsive and scalable designs.",
-      },
-      {
-        subSkill: "Prototyping",
-        proficiency: 80,
-        description:
-          "Built interactive prototypes with complex animations and transitions.",
-      },
-      {
-        subSkill: "Design Handoff",
-        proficiency: 75,
-        description:
-          "Prepared designs for developer handoff with proper documentation.",
-      },
-    ],
-  },
+
+  // {
+  //   name: "Figma",
+  //   proficiency: 40,
+  //   category: "design",
+  //   icon: "figma",
+  //   subskills: [
+  //     {
+  //       subSkill: "Component Libraries",
+  //       proficiency: 40,
+  //       description:
+  //         "Created and maintained reusable component libraries in Figma.",
+  //     },
+  //     {
+  //       subSkill: "Auto Layout",
+  //       proficiency: 50,
+  //       description:
+  //         "Extensive use of auto layout for responsive and scalable designs.",
+  //     },
+  //     {
+  //       subSkill: "Prototyping",
+  //       proficiency: 60,
+  //       description:
+  //         "Built interactive prototypes with complex animations and transitions.",
+  //     },
+  //     {
+  //       subSkill: "Design Handoff",
+  //       proficiency: 75,
+  //       description:
+  //         "Prepared designs for developer handoff with proper documentation.",
+  //     },
+  //   ],
+  // },
   {
     name: "Git",
     proficiency: 85,
@@ -596,35 +674,35 @@ export const skills: Skill[] = [
       },
     ],
   },
-  {
-    name: "AWS",
-    proficiency: 55,
-    category: "other",
-    icon: "aws",
-    subskills: [
-      {
-        subSkill: "EC2",
-        proficiency: 60,
-        description: "Basic experience deploying and managing EC2 instances.",
-      },
-      {
-        subSkill: "S3",
-        proficiency: 65,
-        description:
-          "Configured S3 buckets for static website hosting and file storage.",
-      },
-      {
-        subSkill: "Lambda",
-        proficiency: 50,
-        description: "Created basic serverless functions with AWS Lambda.",
-      },
-      {
-        subSkill: "IAM",
-        proficiency: 55,
-        description: "Configured basic IAM policies and permissions.",
-      },
-    ],
-  },
+  // {
+  //   name: "AWS",
+  //   proficiency: 55,
+  //   category: "other",
+  //   icon: "aws",
+  //   subskills: [
+  //     {
+  //       subSkill: "EC2",
+  //       proficiency: 60,
+  //       description: "Basic experience deploying and managing EC2 instances.",
+  //     },
+  //     {
+  //       subSkill: "S3",
+  //       proficiency: 65,
+  //       description:
+  //         "Configured S3 buckets for static website hosting and file storage.",
+  //     },
+  //     {
+  //       subSkill: "Lambda",
+  //       proficiency: 50,
+  //       description: "Created basic serverless functions with AWS Lambda.",
+  //     },
+  //     {
+  //       subSkill: "IAM",
+  //       proficiency: 55,
+  //       description: "Configured basic IAM policies and permissions.",
+  //     },
+  //   ],
+  // },
   {
     name: "Bootstrap",
     proficiency: 75,
@@ -751,7 +829,7 @@ export const skills: Skill[] = [
         proficiency: 70,
         description:
           "Used addons like Actions, Controls, and Knobs to enhance component interaction and testing.",
-      }
+      },
     ],
   },
   {
@@ -804,79 +882,166 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "EchoHelp - Emergency Response Platform",
     description:
-      "A full-featured e-commerce platform with product management, cart, checkout, and payment integration.",
-    image:
-      "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe API"],
-    demoUrl: "https://demo-ecommerce.com",
-    githubUrl: "https://github.com/yourusername/ecommerce",
+      "A full-featured mobile responsive Emergency Response platform for the society with emergency management, emergency services, weather moniter, notification alert and google map integration. Users can report emergencies, request help, and receive real-time updates.",
+    images: [
+      "src/assets/projects/echohelp/echohelp-login.png",
+      "src/assets/projects/echohelp/echohelp-1.jpg",
+      "src/assets/projects/echohelp/echohelp-2.png",
+      "src/assets/projects/echohelp/echohelp-3.png",
+      "src/assets/projects/echohelp/echohelp-4.png",
+      "src/assets/projects/echohelp/echohelp-5.png",
+    ],
+    technologies: [
+      "React",
+      "Supabase",
+      "Tailwind CSS",
+      "TypeScript",
+      "Zustand",
+    ],
+    demoUrl: "https://echohelp.netlify.app",
+    githubUrl: "https://github.com/sukanta47/echohelp-fe",
     featured: true,
     category: "web",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description:
-      "A Kanban-style task management application with drag and drop functionality and team collaboration features.",
-    image:
-      "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
-    demoUrl: "https://task-management-app.com",
-    githubUrl: "https://github.com/yourusername/task-management",
+    title: "Regulating AI",
+    description: `RegulatingAI is a dedicated non-profit organisation (ai non profit) designed for experts, mentors, and users of artificial intelligence (AI) with a keen interest in exploring the intersection of AI and regulation.`,
+    images: [
+      "src/assets/projects/regulatingai/regulatingai-1.jpg",
+      "src/assets/projects/regulatingai/regulatingai-2.png",
+      "src/assets/projects/regulatingai/regulatingai-3.png",
+      "src/assets/projects/regulatingai/regulatingai-4.png",
+      "src/assets/projects/regulatingai/regulatingai-5.png",
+      "src/assets/projects/regulatingai/regulatingai-6.png",
+    ],
+    technologies: ["Wordpress", "CMS", "PHP", "MySql", "Elementor"],
+    demoUrl: "https://regulatingai.org",
     featured: true,
     category: "web",
   },
   {
     id: 3,
-    title: "Fitness Tracking Mobile App",
-    description:
-      "A cross-platform mobile application for tracking workouts, nutrition, and fitness progress.",
-    image:
-      "https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["React Native", "TypeScript", "Redux", "Firebase"],
-    demoUrl: "https://fitness-app.com",
-    githubUrl: "https://github.com/yourusername/fitness-app",
-    featured: false,
-    category: "mobile",
-  },
-  {
-    id: 4,
-    title: "Portfolio Website",
-    description:
-      "A personalized portfolio website showcasing my projects, skills, and professional experience.",
-    image:
-      "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    demoUrl: "https://myportfolio.com",
-    githubUrl: "https://github.com/yourusername/portfolio",
+    title: "Jagadeva Kutumbakam - NGO Website",
+    description: `A community-driven NGO app that connects users with services based on financial eligibility, inspired by the philosophy "Vasudhaiva Kutumbakam" (The World Is One Family), the platform facilitates access to offerings from verified service providers.`,
+    images: [
+      "src/assets/projects/jk/jagadevakutumbakam.png",
+      "src/assets/projects/jk/jagadevakutumbakam-2.png",
+      "src/assets/projects/jk/jagadevakutumbakam-3.png",
+    ],
+    technologies: ["React", "JavaScript", "Firebase", "Tailwind CSS", "MUI"],
+    demoUrl: "https://www.jagadevakutumbakam.com",
     featured: true,
     category: "web",
   },
   {
-    id: 5,
-    title: "Weather Dashboard",
+    id: 4,
+    title: "FireFlink - Extreme Testing Platform",
     description:
-      "A real-time weather dashboard with location-based forecasts, maps, and severe weather alerts.",
-    image:
-      "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["React", "OpenWeather API", "Chart.js", "Tailwind CSS"],
-    demoUrl: "https://weather-dashboard.com",
-    githubUrl: "https://github.com/yourusername/weather-dashboard",
-    featured: false,
+      "Served as a core front-end contributor in building FireFlink from the ground up. Actively involved in design discussions, feature requirement analysis, and development. Implemented and maintained critical features using React JS, TypeScript and Tailwind CSS with Redux as state manangement, delivering a responsive and user-friendly interface for the platform.",
+    images: [
+      "src/assets/projects/fireflink/fireflink-login.jpg",
+      "src/assets/projects/fireflink/ff-2.png",
+      "src/assets/projects/fireflink/ff-3.png",
+      "src/assets/projects/fireflink/ff-4.png",
+      "src/assets/projects/fireflink/ff-5.png",
+      "src/assets/projects/fireflink/ff-6.png",
+      "src/assets/projects/fireflink/ff-7.png",
+    ],
+    technologies: [
+      "React JS",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "Storybook",
+      "Redux",
+      "Axios",
+    ],
+    demoUrl: "https://www.fireflink.com",
+    githubUrl: "",
+    featured: true,
+    category: "web",
+  },
+
+  {
+    id: 5,
+    title: "Portfolio Website",
+    description:
+      "A personalized portfolio website showcasing my projects, skills, and professional experience.",
+    images: [
+      "src/assets/projects/portfolio/portfolio.png",
+      "src/assets/projects/portfolio/portfolio-1.png",
+      "src/assets/projects/portfolio/portfolio-2.png",
+      "src/assets/projects/portfolio/portfolio-3.png",
+      "src/assets/projects/portfolio/portfolio-4.png",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "EmailJS",
+    ],
+    demoUrl: "https://sukantabiswasdev.netlify.app",
+    githubUrl: "https://github.com/sukanta47/portfolio-react",
+    featured: true,
     category: "web",
   },
   {
     id: 6,
-    title: "Restaurant Booking System",
-    description:
-      "A restaurant reservation system with table management, customer profiles, and automated reminders.",
-    image:
-      "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    technologies: ["React", "Node.js", "PostgreSQL", "Express", "Twilio API"],
-    demoUrl: "https://restaurant-booking.com",
+    title: "AcrossGeo - Talent Acquisition Platform",
+    description: `The application is to bridge between talents and the client where both talents and
+client can register and look for job and resource. React.js, Redux, Typescript, Sass
+and RTK Query with Rest api are the technologies used.`,
+    images: [
+      "src/assets/projects/acrossgeo/acrossgeo.jpg",
+      "src/assets/projects/acrossgeo/acrossgeo-1.jpg",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "REST Api",
+      "Zustand",
+      "Tailwind CSS",
+    ],
+    demoUrl: "https://acrossgeo.com",
+    featured: false,
+    category: "web",
+  },
+  {
+    id: 7,
+    title: "Philips Naming Convention Tool",
+    description: `Developed a specialized tool for Philips Proposition Managers to standardize naming for products, technologies, and extensions. Built with an intelligent decision-tree architecture that adapts questions based on user input to generate
+context-specific naming conventions. Enabled consistent and efficient naming
+practices across various business entities.`,
+    images: [
+      "src/assets/projects/philips.webp",
+    ],
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Sass"],
     githubUrl: "https://github.com/yourusername/restaurant-booking",
+    featured: false,
+    category: "web",
+  },
+  {
+    id: 8,
+    title: "Assesment and Certification Tool - Fireflink Academy",
+    description: `The application was developed to meet Fireflink's requirements for a certification
+platform as part of Fireflink Academy, enabling users to become certified in
+Automation and Fireflink testing.`,
+    images: [
+      "src/assets/projects/fireflink/fireflink-academy.jpg",
+    ],
+    technologies: [
+      "React",
+      "JavaScript",
+      "REST Api",
+      "Axios",
+      "Redux",
+      "Tailwind CSS",
+    ],
+    demoUrl: "https://www.fireflink.com/fireflink-academy",
     featured: false,
     category: "web",
   },
@@ -904,9 +1069,9 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    role: "UX Designer",
-    company: "Creative Solutions",
+    name: "Upasana Das",
+    role: "Business Coordinator",
+    company: "Knowledge Networks",
     avatar:
       "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     content:
@@ -920,10 +1085,8 @@ export const aboutMe = {
   location: "Bengaluru, India",
   email: "sukantabiswas.dev@gmail.com",
   phone: "+91 8209777461",
-  bio_headline: `I'm a passionate UI developer with 6+ years of experience crafting modern web and mobile applications. I specialize in React, TypeScript, JavaScript, Angular, Redux, Node.js, and Firebase, with a strong focus on intuitive user experiences and performance.`,
-  bio: `I'm a passionate UI developer with 6+ years of experience crafting modern web and mobile applications. I specialize in React, TypeScript, JavaScript, Angular, Redux, Node.js, and Firebase, with a strong focus on intuitive user experiences and performance.
-Starting with a computer science degree, I quickly gravitated toward front-end development, driven by a love for clean design and seamless UX.
-Outside of work, I enjoy hiking, exploring new recipes, and contributing to open-source. I'm always learning and open to freelance roles and exciting collaborations.`,
+  bio_headline: `I'm a passionate UI developer with 6+ years of experience crafting modern web and mobile applications. I specialize in React, TypeScript, JavaScript, Angular, NextJS, Redux, Zustand, Supabase and Firebase, with a strong focus on intuitive user experiences and performance.`,
+  bio: `Lead Frontend Developer with 6+ years of experience specializing in React, Next.js, JavaScript, TypeScript, Angular, NextJS, Redux, Zustand, Supabase and Firebase. Skilled in building scalable, high-performance web applications with a strong focus on UI/UX, accessibility, and modular architecture. Experienced in leading teams, driving end-to-end product development, and delivering impactful solutions across automation platforms, emergency response apps, and class discovery platforms.`,
 
   experience: [
     {

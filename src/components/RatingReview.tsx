@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Star, StarHalf, UserCircle } from 'lucide-react';
-// import './RatingReview.scss';
 
 interface Review {
   id: number;

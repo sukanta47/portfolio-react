@@ -7,7 +7,6 @@ import {
   Phone,
   GraduationCap,
   Briefcase,
-  BadgeCheck,
   BookOpenCheck,
 } from "lucide-react";
 import { folioData } from "../data";
@@ -246,9 +245,9 @@ const About: React.FC = () => {
                         {edu.university}
                       </a>
                     </p>
-                    <p className="text-sm font-semibold text-gray-600 dark:text-gray-400">
+                    {/* <p className="text-sm font-semibold text-gray-600 dark:text-gray-400">
                       {edu.gpa}
-                    </p>
+                    </p> */}
                   </motion.div>
                 ))}
               </div>
