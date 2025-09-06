@@ -5,7 +5,7 @@ import "./Skills.scss";
 import SubSkills from "./SubSkills";
 import SkillIcon from "./SkillIcon";
 import { Quote } from "lucide-react";
-import { useBreakpoint } from "../../hooks/useBreakpoints";
+import { Skill } from "../../types";
 
 const Skills: React.FC = () => {
   const { skills } = folioData;
@@ -20,7 +20,7 @@ const Skills: React.FC = () => {
     // { value: "design", label: "Design" },
     { value: "other", label: "Other" },
   ];
-      
+
   useEffect(() => {
     if (filter === "all") {
       setActiveSkills(skills);
@@ -32,6 +32,16 @@ const Skills: React.FC = () => {
 
   const handleAccordion = (index: number) => {
     setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  const getOverallProficiency = (skill: Skill) => {
+    if (!skill.subskills || skill.subskills.length === 0)
+      return skill.proficiency || 0;
+    const total = skill.subskills.reduce(
+      (sum, sub) => sum + (sub.proficiency || 0),
+      0
+    );
+    return Math.round(total / skill.subskills.length);
   };
 
   return (
@@ -83,83 +93,89 @@ const Skills: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 w-[18rem] sm:w-[28rem] md:w-[38rem] lg:w-[52rem] mx-auto">
-          {activeSkills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              className="group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-            >
-              <div className="flex justify-between items-center mb-1 md:mb-2">
-                <h3 className="cursor-pointer text-sm m-sm:text-lg font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors duration-300">
-                  <button
-                    type="button"
-                    onClick={() => handleAccordion(index)}
-                    className="focus:outline-none bg-transparent border-none p-0 m-0 text-inherit flex items-center gap-2"
-                    aria-label={`Toggle details for ${skill.name}`}
-                  >            
-                    <SkillIcon name={skill.icon ?? ""} className="size-4 md:size-6 xl:size-7" />
-                    {skill.name}
-                  </button>
-                </h3>
-                <span className="flex gap-5">
-                  <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                    {skill.proficiency}%
+          {activeSkills.map((skill, index) => {
+            const _overallProficiency = getOverallProficiency(skill);
+            return (
+              <motion.div
+                key={skill.name}
+                className="group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+              >
+                <div className="flex justify-between items-center mb-1 md:mb-2">
+                  <h3 className="cursor-pointer text-sm m-sm:text-lg font-medium text-gray-800 dark:text-gray-200 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors duration-300">
+                    <button
+                      type="button"
+                      onClick={() => handleAccordion(index)}
+                      className="focus:outline-none bg-transparent border-none p-0 m-0 text-inherit flex items-center gap-2"
+                      aria-label={`Toggle details for ${skill.name}`}
+                    >
+                      <SkillIcon
+                        name={skill.icon ?? ""}
+                        className="size-6 xl:size-7"
+                      />
+                      {skill.name}
+                    </button>
+                  </h3>
+                  <span className="flex gap-5">
+                    <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                      {_overallProficiency}%
+                    </span>
+                    <svg
+                      className={`w-5 h-5 transition-transform duration-200 cursor-pointer hover:text-primary-500 dark:hover:text-primary-400 ${
+                        expandedIndex === index ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      onClick={() => handleAccordion(index)}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
                   </span>
-                  <svg
-                    className={`w-5 h-5 transition-transform duration-200 cursor-pointer hover:text-primary-500 dark:hover:text-primary-400 ${
-                      expandedIndex === index ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    onClick={() => handleAccordion(index)}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </span>
-              </div>
+                </div>
 
-              <div className="skill-bar">
-                <motion.div
-                  className="skill-progress"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.proficiency}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-                />
-              </div>
-
-              <AnimatePresence>
-                {expandedIndex === index && (
+                <div className="skill-bar">
                   <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-4 overflow-hidden"
-                  >
-                    {skill.description && (
-                      <p className="text-gray-500 text-xs/4 italic p-2 mt-2 bg-gray-100 rounded-md">
-                        <Quote className="h-6 w-6" />
-                        {skill.description}
-                      </p>
-                    )}
-                    <div className="py-4 skill-chip">
-                      <SubSkills subskills={skill.subskills ?? []} />
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+                    className="skill-progress"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${_overallProficiency}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+                  />
+                </div>
+
+                <AnimatePresence>
+                  {expandedIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="px-4 overflow-hidden"
+                    >
+                      {skill.description && (
+                        <p className="text-gray-500 text-xs/4 italic p-2 mt-2 bg-gray-100 rounded-md">
+                          <Quote className="h-6 w-6" />
+                          {skill.description}
+                        </p>
+                      )}
+                      <div className="py-4 skill-chip">
+                        <SubSkills subskills={skill.subskills ?? []} />
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

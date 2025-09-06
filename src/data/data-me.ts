@@ -51,23 +51,47 @@ export const skills: Skill[] = [
       "Proficient in React.js for building scalable, component-driven UIs with modern features like hooks, lazy loading, and Redux Toolkit. Focused on performance, accessibility, and clean architecture.",
     subskills: [
       {
-        subSkill: "framer-motion",
+        subSkill: "Hooks (useState, useEffect, custom hooks)",
+        proficiency: 90,
+        description:
+          "Expert in leveraging React hooks to manage state, side effects, and reusable logic across components.",
+      },
+      {
+        subSkill: "React Router",
+        proficiency: 90,
+        description:
+          "Experience in implementing client-side routing using React Router v5, v6, and v7 with nested and dynamic routes.",
+      },
+      {
+        subSkill: "Context API",
+        proficiency: 90,
+        description:
+          "Skilled in using Context API for managing global state and avoiding prop drilling in medium to large applications.",
+      },
+      {
+        subSkill: "Redux & Redux Toolkit",
+        proficiency: 85,
+        description:
+          "Proficient in Redux for predictable state management, with hands-on experience using RTK slices, async thunks, and DevTools.",
+      },
+      {
+        subSkill: "Framer Motion",
         proficiency: 75,
         description:
-          "I have used Framer Motion for creating smooth animations and transitions in React applications.",
+          "Used Framer Motion for creating smooth animations, transitions, and interactive UI effects in React apps.",
       },
       {
-        subSkill: "contextApi",
-        proficiency: 90,
+        subSkill: "Performance Optimization",
+        proficiency: 80,
         description:
-          "I have experience with contextApi for data sharing between components without prop drilling.",
+          "Optimized React apps using code splitting, memoization (React.memo, useMemo, useCallback), and lazy loading.",
       },
-      {
-        subSkill: "react-router",
-        proficiency: 90,
-        description:
-          "I have experience in react-router-dom v5 as well as modern routing with v6 and v7.",
-      },
+      // {
+      //   subSkill: "Testing (React Testing Library & Jest)",
+      //   proficiency: 70,
+      //   description:
+      //     "Experience writing unit and integration tests to ensure UI reliability and maintainability.",
+      // },
     ],
   },
   {
@@ -104,34 +128,54 @@ export const skills: Skill[] = [
   },
   {
     name: "JavaScript",
-    proficiency: 95,
+    proficiency: 88,
     category: "frontend",
     icon: "javascript",
+    description:
+      "Expert in modern JavaScript (ES6+) with a strong foundation in functional programming, asynchronous patterns, and DOM manipulation. Skilled at writing clean, performant, and maintainable code for scalable web applications.",
     subskills: [
       {
         subSkill: "ES6+ Features",
         proficiency: 95,
         description:
-          "Extensive experience with modern JavaScript features including arrow functions, destructuring, spread/rest operators, etc.",
+          "Extensive experience with ES6+ features including arrow functions, template literals, destructuring, spread/rest operators, modules, and optional chaining.",
       },
       {
-        subSkill: "Asynchronous JS",
+        subSkill: "Asynchronous JavaScript",
         proficiency: 90,
         description:
-          "Deep understanding of promises, async/await, and event loop for handling asynchronous operations.",
+          "Deep understanding of promises, async/await, event loop, microtasks/macrotasks, and handling concurrent operations effectively.",
       },
       {
         subSkill: "Functional Programming",
         proficiency: 85,
         description:
-          "Proficient in functional programming concepts like pure functions, higher-order functions, and immutability.",
+          "Proficient in functional programming concepts like pure functions, immutability, higher-order functions, map/reduce/filter, and composition.",
       },
       {
         subSkill: "DOM Manipulation",
         proficiency: 90,
         description:
-          "Strong skills in manipulating the DOM directly and optimizing performance.",
+          "Strong skills in manipulating and traversing the DOM directly, optimizing reflows/repaints, and handling events efficiently.",
       },
+      {
+        subSkill: "Error Handling & Debugging",
+        proficiency: 85,
+        description:
+          "Skilled in using try/catch, custom error objects, and debugging tools (Chrome DevTools, console, breakpoints) for robust applications.",
+      },
+      {
+        subSkill: "Performance Optimization",
+        proficiency: 80,
+        description:
+          "Knowledge of optimizing JS performance with techniques like debouncing, throttling, memoization, and minimizing blocking operations.",
+      },
+      // {
+      //   subSkill: "Testing with Jest",
+      //   proficiency: 40,
+      //   description:
+      //     "Experience writing unit tests and mocking with Jest to ensure JavaScript code reliability and maintainability.",
+      // },
     ],
   },
   {
@@ -1016,9 +1060,7 @@ and RTK Query with Rest api are the technologies used.`,
     description: `Developed a specialized tool for Philips Proposition Managers to standardize naming for products, technologies, and extensions. Built with an intelligent decision-tree architecture that adapts questions based on user input to generate
 context-specific naming conventions. Enabled consistent and efficient naming
 practices across various business entities.`,
-    images: [
-      "/projects/philips.webp",
-    ],
+    images: ["/projects/philips.webp"],
     technologies: ["React", "JavaScript", "Tailwind CSS", "Sass"],
     githubUrl: "https://github.com/yourusername/restaurant-booking",
     featured: false,
@@ -1030,9 +1072,7 @@ practices across various business entities.`,
     description: `The application was developed to meet Fireflink's requirements for a certification
 platform as part of Fireflink Academy, enabling users to become certified in
 Automation and Fireflink testing.`,
-    images: [
-      "/projects/fireflink/fireflink-academy.jpg",
-    ],
+    images: ["/projects/fireflink/fireflink-academy.jpg"],
     technologies: [
       "React",
       "JavaScript",
@@ -1047,8 +1087,7 @@ Automation and Fireflink testing.`,
   },
 ];
 
-export const testimonials: Testimonial[] = [
-];
+export const testimonials: Testimonial[] = [];
 
 export const aboutMe = {
   name: "Sukanta Biswas",
