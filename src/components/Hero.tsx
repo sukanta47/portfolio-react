@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronsDown, Heart } from "lucide-react";
 import { folioData } from "../data";
-// import bohemianMan from "../assets/sukanta-black.png";
 import bohemianMan from "../assets/sukanta-b-cropped.png";
 import vectorImg from "../assets/vector.svg";
 import { confettiShoot } from "./ConfettiShoot";

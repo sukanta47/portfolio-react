@@ -149,8 +149,8 @@ const Testimonials: React.FC = () => {
               <img
                 src={
                   reviewsData[currentIndex].sex === "m"
-                    ? "src/assets/avatar/male-avatar.jpg"
-                    : "src/assets/avatar/female-avatar-2.jpg"
+                    ? "/avatar/male-avatar.jpg"
+                    : "/avatar/female-avatar-2.jpg"
                 }
                 alt={`featuredReviews[currentIndex].name`}
                 className="w-20 h-20 rounded-full object-cover border-4 border-white dark:border-dark-600 shadow-md"

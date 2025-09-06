@@ -886,12 +886,12 @@ export const projects: Project[] = [
     description:
       "A full-featured mobile responsive Emergency Response platform for the society with emergency management, emergency services, weather moniter, notification alert and google map integration. Users can report emergencies, request help, and receive real-time updates.",
     images: [
-      "src/assets/projects/echohelp/echohelp-login.png",
-      "src/assets/projects/echohelp/echohelp-1.jpg",
-      "src/assets/projects/echohelp/echohelp-2.png",
-      "src/assets/projects/echohelp/echohelp-3.png",
-      "src/assets/projects/echohelp/echohelp-4.png",
-      "src/assets/projects/echohelp/echohelp-5.png",
+      "/projects/echohelp/echohelp-login.png",
+      "/projects/echohelp/echohelp-1.jpg",
+      "/projects/echohelp/echohelp-2.png",
+      "/projects/echohelp/echohelp-3.png",
+      "/projects/echohelp/echohelp-4.png",
+      "/projects/echohelp/echohelp-5.png",
     ],
     technologies: [
       "React",
@@ -910,12 +910,12 @@ export const projects: Project[] = [
     title: "Regulating AI",
     description: `RegulatingAI is a dedicated non-profit organisation (ai non profit) designed for experts, mentors, and users of artificial intelligence (AI) with a keen interest in exploring the intersection of AI and regulation.`,
     images: [
-      "src/assets/projects/regulatingai/regulatingai-1.jpg",
-      "src/assets/projects/regulatingai/regulatingai-2.png",
-      "src/assets/projects/regulatingai/regulatingai-3.png",
-      "src/assets/projects/regulatingai/regulatingai-4.png",
-      "src/assets/projects/regulatingai/regulatingai-5.png",
-      "src/assets/projects/regulatingai/regulatingai-6.png",
+      "/projects/regulatingai/regulatingai-1.jpg",
+      "/projects/regulatingai/regulatingai-2.png",
+      "/projects/regulatingai/regulatingai-3.png",
+      "/projects/regulatingai/regulatingai-4.png",
+      "/projects/regulatingai/regulatingai-5.png",
+      "/projects/regulatingai/regulatingai-6.png",
     ],
     technologies: ["Wordpress", "CMS", "PHP", "MySql", "Elementor"],
     demoUrl: "https://regulatingai.org",
@@ -927,9 +927,9 @@ export const projects: Project[] = [
     title: "Jagadeva Kutumbakam - NGO Website",
     description: `A community-driven NGO app that connects users with services based on financial eligibility, inspired by the philosophy "Vasudhaiva Kutumbakam" (The World Is One Family), the platform facilitates access to offerings from verified service providers.`,
     images: [
-      "src/assets/projects/jk/jagadevakutumbakam.png",
-      "src/assets/projects/jk/jagadevakutumbakam-2.png",
-      "src/assets/projects/jk/jagadevakutumbakam-3.png",
+      "/projects/jk/jagadevakutumbakam.png",
+      "/projects/jk/jagadevakutumbakam-2.png",
+      "/projects/jk/jagadevakutumbakam-3.png",
     ],
     technologies: ["React", "JavaScript", "Firebase", "Tailwind CSS", "MUI"],
     demoUrl: "https://www.jagadevakutumbakam.com",
@@ -942,13 +942,13 @@ export const projects: Project[] = [
     description:
       "Served as a core front-end contributor in building FireFlink from the ground up. Actively involved in design discussions, feature requirement analysis, and development. Implemented and maintained critical features using React JS, TypeScript and Tailwind CSS with Redux as state manangement, delivering a responsive and user-friendly interface for the platform.",
     images: [
-      "src/assets/projects/fireflink/fireflink-login.jpg",
-      "src/assets/projects/fireflink/ff-2.png",
-      "src/assets/projects/fireflink/ff-3.png",
-      "src/assets/projects/fireflink/ff-4.png",
-      "src/assets/projects/fireflink/ff-5.png",
-      "src/assets/projects/fireflink/ff-6.png",
-      "src/assets/projects/fireflink/ff-7.png",
+      "/projects/fireflink/fireflink-login.jpg",
+      "/projects/fireflink/ff-2.png",
+      "/projects/fireflink/ff-3.png",
+      "/projects/fireflink/ff-4.png",
+      "/projects/fireflink/ff-5.png",
+      "/projects/fireflink/ff-6.png",
+      "/projects/fireflink/ff-7.png",
     ],
     technologies: [
       "React JS",
@@ -971,11 +971,11 @@ export const projects: Project[] = [
     description:
       "A personalized portfolio website showcasing my projects, skills, and professional experience.",
     images: [
-      "src/assets/projects/portfolio/portfolio.png",
-      "src/assets/projects/portfolio/portfolio-1.png",
-      "src/assets/projects/portfolio/portfolio-2.png",
-      "src/assets/projects/portfolio/portfolio-3.png",
-      "src/assets/projects/portfolio/portfolio-4.png",
+      "/projects/portfolio/portfolio.png",
+      "/projects/portfolio/portfolio-1.png",
+      "/projects/portfolio/portfolio-2.png",
+      "/projects/portfolio/portfolio-3.png",
+      "/projects/portfolio/portfolio-4.png",
     ],
     technologies: [
       "React",
@@ -996,8 +996,8 @@ export const projects: Project[] = [
 client can register and look for job and resource. React.js, Redux, Typescript, Sass
 and RTK Query with Rest api are the technologies used.`,
     images: [
-      "src/assets/projects/acrossgeo/acrossgeo.jpg",
-      "src/assets/projects/acrossgeo/acrossgeo-1.jpg",
+      "/projects/acrossgeo/acrossgeo.jpg",
+      "/projects/acrossgeo/acrossgeo-1.jpg",
     ],
     technologies: [
       "React",
@@ -1017,7 +1017,7 @@ and RTK Query with Rest api are the technologies used.`,
 context-specific naming conventions. Enabled consistent and efficient naming
 practices across various business entities.`,
     images: [
-      "src/assets/projects/philips.webp",
+      "/projects/philips.webp",
     ],
     technologies: ["React", "JavaScript", "Tailwind CSS", "Sass"],
     githubUrl: "https://github.com/yourusername/restaurant-booking",
@@ -1031,7 +1031,7 @@ practices across various business entities.`,
 platform as part of Fireflink Academy, enabling users to become certified in
 Automation and Fireflink testing.`,
     images: [
-      "src/assets/projects/fireflink/fireflink-academy.jpg",
+      "/projects/fireflink/fireflink-academy.jpg",
     ],
     technologies: [
       "React",
@@ -1048,35 +1048,6 @@ Automation and Fireflink testing.`,
 ];
 
 export const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Shreesha Keshava",
-    role: "Owner",
-    company: "Jagadeva Kutumbakam",
-    avatar: "",
-    content:
-      "Working with this developer was an absolute pleasure. Their attention to detail and problem-solving abilities significantly improved our product's user experience.",
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "CTO",
-    company: "Startup Ventures",
-    avatar:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    content:
-      "Exceptional technical skills combined with great communication. Delivered our project ahead of schedule with all requirements met and exceeded our expectations.",
-  },
-  {
-    id: 3,
-    name: "Upasana Das",
-    role: "Business Coordinator",
-    company: "Knowledge Networks",
-    avatar:
-      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    content:
-      "As a designer, I appreciate developers who can accurately translate designs into functioning products. Their work was pixel-perfect and they added thoughtful interactions that enhanced the user experience.",
-  },
 ];
 
 export const aboutMe = {
