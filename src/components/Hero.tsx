@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, ChevronsDown, Heart } from "lucide-react";
 import { folioData } from "../data";
-import bohemianMan from "../assets/sukanta-b-cropped.png";
+import bohemianMan from "../../public/sukanta-b-cropped.webp";
 import vectorImg from "../assets/vector.svg";
 import { confettiShoot } from "./ConfettiShoot";
 
@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
       id="home"
       className="relative min-h-screen min-w-2xl flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark-900 dark:to-dark-800 transition-all duration-500 ease-in-out"
     >
-      <div className="absolute inset-0 opacity-80 dark:opacity-20 bg-[url(src/assets/bg-strip-white.jpg)] bg-cover bg-center">
+      <div className="absolute inset-0 opacity-80 dark:opacity-20 bg-[url(src/assets/bg-strip-white.webp)] bg-cover bg-center">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_50%)]"></div>
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.15),transparent_50%)]"></div>
       </div>

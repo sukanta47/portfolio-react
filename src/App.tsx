@@ -1,45 +1,42 @@
-import React, { useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/projects/Projects';
-import Skills from './components/Skills/Skills';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
-import { ThemeProvider } from './context/ThemeContext';
-import { useAppSelector } from './app/hooks';
-import WeatherCard from './features/WeatherCard/WeatherCard';
+import React, { lazy, Suspense, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import ScrollToTop from "./components/ScrollToTop";
+import { ThemeProvider } from "./context/ThemeContext";
+import { useAppSelector } from "./app/hooks";
+import FallbackLoadingPage from "./components/Loading";
+
+const Projects = lazy(() => import("./components/projects/Projects"));
+const Skills = lazy(() => import("./components/Skills/Skills"));
+const Testimonials = lazy(() => import("./components/Testimonials"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
-  const [isScrolledToShowTitle, setIsScrolledToShowTitle] = React.useState(false);
-  const _isScrolledToShowTitle = useAppSelector(state=>state.scroll.isScrolledToShowTitle);
+  const _isScrolledToShowTitle = useAppSelector(
+    (state) => state.scroll.isScrolledToShowTitle
+  );
   useEffect(() => {
-    // Update document title
-    document.title = 'Sukanta Biswas | Lead UI Developer';
-    setIsScrolledToShowTitle(_isScrolledToShowTitle)
-    // ScrollReveal effect
+    document.title = "Sukanta Biswas | Lead UI Developer";
     const handleScroll = () => {
-      const reveals = document.querySelectorAll('.reveal');
-      
+      const reveals = document.querySelectorAll(".reveal");
       for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
         const elementVisible = 150;
-        
+
         if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add('active');
+          reveals[i].classList.add("active");
         }
       }
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    // Initial check
+
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
-    
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [_isScrolledToShowTitle]);
 
@@ -48,14 +45,24 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
-          <Hero scrolledToShowTitle={isScrolledToShowTitle}/>
+          <Hero scrolledToShowTitle={_isScrolledToShowTitle} />
           <About />
-          <Skills />
-          <Projects />
-          <Testimonials />
-          <Contact />
+          <Suspense fallback={<FallbackLoadingPage />}>
+            <Skills />
+          </Suspense>
+          <Suspense fallback={<FallbackLoadingPage />}>
+            <Projects />
+          </Suspense>
+          <Suspense fallback={<FallbackLoadingPage />}>
+            <Testimonials />
+          </Suspense>
+          <Suspense fallback={<FallbackLoadingPage />}>
+            <Contact />
+          </Suspense>
         </main>
-        <Footer />
+        <Suspense fallback={<FallbackLoadingPage />}>
+          <Footer />
+        </Suspense>
         <ScrollToTop />
       </div>
     </ThemeProvider>

@@ -241,6 +241,17 @@ body {
     @apply dark:bg-dark-800 text-gray-900 dark:text-gray-100 hover:text-gray-100 hover:fill-dark-800 dark:hover:text-gray-100 dark:hover:fill-gray-100 transition-colors duration-300;
   }
 }
-h3{
-  @apply text-lg sm:text-sm md:text-base lg:text-lg font-semibold text-gray-900 dark:text-gray-100;   
+h3 {
+  @apply text-lg sm:text-sm md:text-base lg:text-lg font-semibold text-gray-900 dark:text-gray-100;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }

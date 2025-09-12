@@ -930,12 +930,12 @@ export const projects: Project[] = [
     description:
       "A full-featured mobile responsive Emergency Response platform for the society with emergency management, emergency services, weather moniter, notification alert and google map integration. Users can report emergencies, request help, and receive real-time updates.",
     images: [
-      "/projects/echohelp/echohelp-login.png",
-      "/projects/echohelp/echohelp-1.jpg",
-      "/projects/echohelp/echohelp-2.png",
-      "/projects/echohelp/echohelp-3.png",
-      "/projects/echohelp/echohelp-4.png",
-      "/projects/echohelp/echohelp-5.png",
+      "/projects/echohelp/echohelp-login.webp",
+      "/projects/echohelp/echohelp-1.webp",
+      "/projects/echohelp/echohelp-2.webp",
+      "/projects/echohelp/echohelp-3.webp",
+      "/projects/echohelp/echohelp-4.webp",
+      "/projects/echohelp/echohelp-5.webp",
     ],
     technologies: [
       "React",
@@ -954,12 +954,12 @@ export const projects: Project[] = [
     title: "Regulating AI",
     description: `RegulatingAI is a dedicated non-profit organisation (ai non profit) designed for experts, mentors, and users of artificial intelligence (AI) with a keen interest in exploring the intersection of AI and regulation.`,
     images: [
-      "/projects/regulatingai/regulatingai-1.jpg",
-      "/projects/regulatingai/regulatingai-2.png",
-      "/projects/regulatingai/regulatingai-3.png",
-      "/projects/regulatingai/regulatingai-4.png",
-      "/projects/regulatingai/regulatingai-5.png",
-      "/projects/regulatingai/regulatingai-6.png",
+      "/projects/regulatingai/regulatingai-1.webp",
+      "/projects/regulatingai/regulatingai-2.webp",
+      "/projects/regulatingai/regulatingai-3.webp",
+      "/projects/regulatingai/regulatingai-4.webp",
+      "/projects/regulatingai/regulatingai-5.webp",
+      "/projects/regulatingai/regulatingai-6.webp",
     ],
     technologies: ["Wordpress", "CMS", "PHP", "MySql", "Elementor"],
     demoUrl: "https://regulatingai.org",
@@ -971,9 +971,9 @@ export const projects: Project[] = [
     title: "Jagadeva Kutumbakam - NGO Website",
     description: `A community-driven NGO app that connects users with services based on financial eligibility, inspired by the philosophy "Vasudhaiva Kutumbakam" (The World Is One Family), the platform facilitates access to offerings from verified service providers.`,
     images: [
-      "/projects/jk/jagadevakutumbakam.png",
-      "/projects/jk/jagadevakutumbakam-2.png",
-      "/projects/jk/jagadevakutumbakam-3.png",
+      "/projects/jk/jagadevakutumbakam.webp",
+      "/projects/jk/jagadevakutumbakam-2.webp",
+      "/projects/jk/jagadevakutumbakam-3.webp",
     ],
     technologies: ["React", "JavaScript", "Firebase", "Tailwind CSS", "MUI"],
     demoUrl: "https://www.jagadevakutumbakam.com",
@@ -986,13 +986,13 @@ export const projects: Project[] = [
     description:
       "Served as a core front-end contributor in building FireFlink from the ground up. Actively involved in design discussions, feature requirement analysis, and development. Implemented and maintained critical features using React JS, TypeScript and Tailwind CSS with Redux as state manangement, delivering a responsive and user-friendly interface for the platform.",
     images: [
-      "/projects/fireflink/fireflink-login.jpg",
-      "/projects/fireflink/ff-2.png",
-      "/projects/fireflink/ff-3.png",
-      "/projects/fireflink/ff-4.png",
-      "/projects/fireflink/ff-5.png",
-      "/projects/fireflink/ff-6.png",
-      "/projects/fireflink/ff-7.png",
+      "/projects/fireflink/fireflink-login.webp",
+      "/projects/fireflink/ff-2.webp",
+      "/projects/fireflink/ff-3.webp",
+      "/projects/fireflink/ff-4.webp",
+      "/projects/fireflink/ff-5.webp",
+      "/projects/fireflink/ff-6.webp",
+      "/projects/fireflink/ff-7.webp",
     ],
     technologies: [
       "React JS",
@@ -1015,11 +1015,11 @@ export const projects: Project[] = [
     description:
       "A personalized portfolio website showcasing my projects, skills, and professional experience.",
     images: [
-      "/projects/portfolio/portfolio.png",
-      "/projects/portfolio/portfolio-1.png",
-      "/projects/portfolio/portfolio-2.png",
-      "/projects/portfolio/portfolio-3.png",
-      "/projects/portfolio/portfolio-4.png",
+      "/projects/portfolio/portfolio.webp",
+      "/projects/portfolio/portfolio-1.webp",
+      "/projects/portfolio/portfolio-2.webp",
+      "/projects/portfolio/portfolio-3.webp",
+      "/projects/portfolio/portfolio-4.webp",
     ],
     technologies: [
       "React",
@@ -1040,8 +1040,8 @@ export const projects: Project[] = [
 client can register and look for job and resource. React.js, Redux, Typescript, Sass
 and RTK Query with Rest api are the technologies used.`,
     images: [
-      "/projects/acrossgeo/acrossgeo.jpg",
-      "/projects/acrossgeo/acrossgeo-1.jpg",
+      "/projects/acrossgeo/acrossgeo.webp",
+      "/projects/acrossgeo/acrossgeo-1.webp",
     ],
     technologies: [
       "React",
@@ -1072,7 +1072,7 @@ practices across various business entities.`,
     description: `The application was developed to meet Fireflink's requirements for a certification
 platform as part of Fireflink Academy, enabling users to become certified in
 Automation and Fireflink testing.`,
-    images: ["/projects/fireflink/fireflink-academy.jpg"],
+    images: ["/projects/fireflink/fireflink-academy.webp"],
     technologies: [
       "React",
       "JavaScript",
