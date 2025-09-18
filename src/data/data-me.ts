@@ -1062,7 +1062,6 @@ context-specific naming conventions. Enabled consistent and efficient naming
 practices across various business entities.`,
     images: ["/projects/philips.webp"],
     technologies: ["React", "JavaScript", "Tailwind CSS", "Sass"],
-    githubUrl: "https://github.com/yourusername/restaurant-booking",
     featured: false,
     category: "web",
   },

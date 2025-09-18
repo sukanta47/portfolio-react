@@ -25,13 +25,14 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
       aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+  console.log({scrolledToShowTitle});
 
   return (
     <section
       id="home"
       className="relative min-h-screen min-w-2xl flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark-900 dark:to-dark-800 transition-all duration-500 ease-in-out"
     >
-      <div className="absolute inset-0 opacity-80 dark:opacity-20 bg-[url(src/assets/bg-strip-white.webp)] bg-cover bg-center">
+      <div className="absolute inset-0 opacity-80 dark:opacity-20 bg-[url(./bg-4.webp)] bg-cover bg-center blur-sm">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_50%)]"></div>
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.15),transparent_50%)]"></div>
       </div>
@@ -69,7 +70,7 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
               </motion.h1>
 
               <motion.p
-                className="text-sm lg:text-base xl:text-lg text-gray-700 dark:text-gray-300 md:mb-4 lg:mb-8 leading-relaxed"
+                className="text-sm lg:text-base 2xl:text-lg text-gray-700 dark:text-gray-300 md:mb-4 lg:mb-8 leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}

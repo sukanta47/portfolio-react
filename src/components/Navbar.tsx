@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   const breakpoint = useBreakpoint();
   const x_initial =
     breakpoint === "xs"
-      ? 26
+      ? 38
       : breakpoint === "sm"
       ? 56
       : breakpoint === "md"
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
       : 10;
   const x_animate =
     breakpoint === "xs"
-      ? 34
+      ? 42
       : breakpoint === "sm"
       ? 56
       : breakpoint === "md"
@@ -53,11 +53,12 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      console.log(window.scrollY);
       setScrolled(window.scrollY > 10);
-      setScrolledToShowTitle(window.scrollY > 42);
+      setScrolledToShowTitle(window.scrollY > 44);
       dispatch({
         type: "SET_SCROLLED_TO_SHOW_TITLE",
-        payload: window.scrollY > 42,
+        payload: window.scrollY > 44,
       });
       const sections = document.querySelectorAll("section[id]");
       const scrollPosition = window.scrollY + 80; 
@@ -163,7 +164,7 @@ const Navbar: React.FC = () => {
             </AnimatePresence>
           </div>
           <div className="hidden md:block col-span-2 md:col-span-3 lg:col-span-2 justify-self-center lg:space-between self-center max-w-lg">
-            <div className="ml-10 flex items-baseline gap-4">
+            <div className="ml-10 flex items-baseline gap-2 lg:gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
