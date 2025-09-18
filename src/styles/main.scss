@@ -83,11 +83,11 @@
     }
   }
   .nav-link {
-    @apply text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300;
+    @apply text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 px-3 py-2 rounded-md text-xs lg:text-sm font-medium transition-colors duration-300;
   }
 
   .nav-link-active {
-    @apply text-primary-500 dark:text-primary-400;
+    @apply text-primary-500 dark:text-primary-400 text-xs lg:text-sm;
   }
 
   .social-icon {
