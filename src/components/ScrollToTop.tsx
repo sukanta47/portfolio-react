@@ -31,6 +31,7 @@ const ScrollToTop: React.FC = () => {
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 p-3 rounded-full bg-primary-500 text-white shadow-lg hover:bg-primary-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 z-50"
           aria-label="Scroll to top"
+          aria-description="button to scroll to top of the portfolio"
         >
           <ArrowUp className="h-5 w-5" />
         </button>

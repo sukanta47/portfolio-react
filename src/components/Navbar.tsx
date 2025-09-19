@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
                 <img
                   src={logo}
                   className={`${scrolledToShowTitle ? "h-8 w-8" : "h-12 w-12"}`}
-                  alt="logo"
+                  alt="app-logo"
                 />
                 <span className="dark:text-white">{aboutMe.name}</span>
               </a>
@@ -226,6 +226,7 @@ const Navbar: React.FC = () => {
               onClick={() => setIsOpen(!isOpen)}
               type="button"
               className="pr-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+              aria-label="mobile-menu"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >

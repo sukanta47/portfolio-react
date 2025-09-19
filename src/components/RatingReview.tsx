@@ -156,6 +156,8 @@ const RatingReview: React.FC<RatingReviewProps> = ({ reviews, summary, onAddRevi
                   : 'text-gray-500 hover:text-gray-700'
               }`}
               onClick={() => setActiveTab('reviews')}
+              aria-label="review-tab"
+              aria-roledescription='review tab to show reviews'
             >
               Reviews ({reviews.length})
             </button>
@@ -166,6 +168,8 @@ const RatingReview: React.FC<RatingReviewProps> = ({ reviews, summary, onAddRevi
                   : 'text-gray-500 hover:text-gray-700'
               }`}
               onClick={() => setActiveTab('write')}
+              aria-label="write-review"
+              aria-roledescription='Write a review button'
             >
               Write a Review
             </button>
@@ -213,7 +217,7 @@ const RatingReview: React.FC<RatingReviewProps> = ({ reviews, summary, onAddRevi
               </div>
 
               <div>
-                <label htmlFor="review-title" className="block text-gray-700 mb-2">
+                <label htmlFor="review-title" className="block text-gray-700 mb-2" aria-label='Review title'>
                   Review Title
                 </label>
                 <input
@@ -225,6 +229,7 @@ const RatingReview: React.FC<RatingReviewProps> = ({ reviews, summary, onAddRevi
                   onChange={(e) =>
                     setNewReview({ ...newReview, title: e.target.value })
                   }
+                  aria-label="Review title"
                 />
               </div>
 
@@ -238,6 +243,7 @@ const RatingReview: React.FC<RatingReviewProps> = ({ reviews, summary, onAddRevi
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Share details of your experience with this product"
                   value={newReview.comment}
+                  aria-label="Review comment"
                   onChange={(e) =>
                     setNewReview({ ...newReview, comment: e.target.value })
                   }
@@ -249,6 +255,8 @@ const RatingReview: React.FC<RatingReviewProps> = ({ reviews, summary, onAddRevi
                 type="submit"
                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
                 disabled={newReview.rating === 0 || !newReview.comment}
+                aria-label='Submit Review'
+                aria-description='Submit review button'
               >
                 Submit Review
               </button>

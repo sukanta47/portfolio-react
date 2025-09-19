@@ -50,7 +50,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
         <motion.img
           key={currentIndex}
           src={images[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
+          alt={`Project image Slide ${currentIndex + 1}`}
           className="absolute w-full h-full object-cover"
           custom={direction}
           initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
@@ -68,12 +68,14 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
       <button
         onClick={prevSlide}
         className="absolute top-1/2 left-2 -translate-y-1/2 bg-black/40 p-1 rounded-full text-white hover:bg-black/60"
+        aria-label="Previous slide"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={nextSlide}
         className="absolute top-1/2 right-2 -translate-y-1/2 bg-black/40 p-1 rounded-full text-white hover:bg-black/60"
+        aria-label="Next slide"
       >
         <ChevronRight className="w-5 h-5" />
       </button>

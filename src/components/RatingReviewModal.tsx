@@ -49,7 +49,7 @@ const RatingReviewModal: React.FC<Props> = ({ open, onClose, onSubmit }) => {
           <input className="input" placeholder="Email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
           <input className="input" placeholder="Designation" value={form.designation} onChange={e => setForm({ ...form, designation: e.target.value })} />
           {!otpSent ? (
-            <button className="btn bg-blue-500 text-white" onClick={handleSendOtp}>Send OTP</button>
+            <button className="btn bg-blue-500 text-white" onClick={handleSendOtp} aria-label="send otp" aria-description="Send mobile otp button, to verify user before submitting review ">Send OTP</button>
           ) : (
             <>
               <input className="input" placeholder="Enter OTP" value={form.otp} onChange={e => setForm({ ...form, otp: e.target.value })} />
@@ -64,8 +64,8 @@ const RatingReviewModal: React.FC<Props> = ({ open, onClose, onSubmit }) => {
                   />
                 ))}
               </div>
-              <button className="btn bg-green-500 text-white mt-2" onClick={handleVerifyAndSubmit}>Submit Review</button>
-              <button className="btn bg-gray-300 mt-2 ml-3" onClick={handleClose}>Cancel</button>
+              <button className="btn bg-green-500 text-white mt-2" onClick={handleVerifyAndSubmit} aria-label="Submit review" aria-description="submit reivew button">Submit Review</button>
+              <button className="btn bg-gray-300 mt-2 ml-3" onClick={handleClose} aria-label="cancel review button" aria-description="cancel submitting reivew button">Cancel</button>
             </>
           )}
         </Dialog.Panel>

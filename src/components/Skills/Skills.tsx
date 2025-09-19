@@ -86,13 +86,14 @@ const Skills: React.FC = () => {
                   ? "bg-primary-500 text-white"
                   : "bg-gray-200 dark:bg-dark-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-dark-600"
               }`}
+              aria-label={`Category ${category.label}`}
             >
               {category.label}
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 xl:gap-10 w-11/12 sm:w-[28rem] md:w-[38rem] lg:w-[52rem] xl:w-[74rem] 2xl:w-[100rem] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 xl:gap-10 w-11/12 sm:w-[28rem] md:w-[38rem] lg:w-[52rem] xl:w-[60remrem] 2xl:w-[100rem] mx-auto">
           {activeSkills.map((skill, index) => {
             const _overallProficiency = getOverallProficiency(skill);
             return (
@@ -131,6 +132,8 @@ const Skills: React.FC = () => {
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                       onClick={() => handleAccordion(index)}
+                      xlinkTitle={`click to ${expandedIndex === index ? "collapse" : "expand "} ${skill.name} skill details`}
+                      aria-label={`click to ${expandedIndex === index ? "collapse" : "expand "} ${skill.name} skill details`}
                     >
                       <path
                         strokeLinecap="round"
