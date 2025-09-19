@@ -52,7 +52,7 @@ const About: React.FC = () => {
             <h3 className="heading-sm md:heading-md lg:heading-md text-gray-800 dark:text-gray-100">
               Get to know me
             </h3>
-            <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+            <div className="space-y-4 description text-gray-700 dark:text-gray-300 leading-relaxed">
               {aboutMe.bio.split("\n\n").map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -196,7 +196,7 @@ const About: React.FC = () => {
                     <p className="mt-1 lg:mt-0 text-gray-600 dark:text-gray-400">
                       {exp.company}
                     </p>
-                    <p className="mt-2 text-gray-700 dark:text-gray-300">
+                    <p className="mt-2 description text-gray-700 dark:text-gray-300">
                       {exp.description}
                     </p>
                   </motion.div>
@@ -220,15 +220,15 @@ const About: React.FC = () => {
                     transition={{ duration: 0.3, delay: 0.1 * index }}
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <h4 className="text-lg font-semibold text-gray-800 dark:text-white">
+                      <h4 className="text-base lg:text-lg xl:text-xl font-semibold text-gray-800 dark:text-white">
                         {edu.degree}
                       </h4>
-                      <div className="flex items-center gap-1 text-sm font-medium text-primary-500 dark:text-primary-400">
+                      <div className="flex items-center gap-1 text-xs lg:text-sm xl:text-base 2xl:text-lg  font-medium text-primary-500 dark:text-primary-400">
                         <Calendar className="h-4 w-4" />
                         <span>{edu.period}</span>
                       </div>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-400">
+                    <p className="mt-2 text-sm lg:text-base xl:text-lg text-gray-600 dark:text-gray-400">
                       <a
                         className="text-primary-400 dark:text-primary-600 hover:text-primary-500 dark:hover:text-primary-500"
                         href={edu?.instituteUrl ?? "#"}

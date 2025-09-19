@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useAppDispatch } from "../app/hooks";
 import Badge from "./Badge";
 import { useBreakpoint } from "../hooks/useBreakpoints";
-import logo from "../assets/sb-logo-blue.png";
+import logo from "../assets/sb-logo-new.png";
 
 const Navbar: React.FC = () => {
   const { aboutMe, navItems } = folioData;
@@ -136,10 +136,10 @@ const Navbar: React.FC = () => {
               >
                 <img
                   src={logo}
-                  className={`${scrolledToShowTitle ? "h-8 w-8" : "h-12 w-12"}`}
+                  className={`${scrolledToShowTitle ? "h-8 w-8" : "h-10 w-10"}`}
                   alt="app-logo"
                 />
-                <span className="dark:text-white">{aboutMe.name}</span>
+                <span className={`dark:text-white ${scrolledToShowTitle ? "text-base xl:text-lg 2xl:text-xl" : "text-lg xl:text-2xl"}`}>{aboutMe.name}</span>
               </a>
             </motion.div>
             <AnimatePresence initial={false}>

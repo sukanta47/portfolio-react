@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
               {aboutMe.title}
             </motion.span>
           )}
-          <section className="flex flex-col items-center gap-3 pt-0 pb-0 px-3 md:px-8 lg:px-0 relative sm:gap-8 md:gap-12 lg:gap-14 lg:flex-row xl:flex-row-reverse md:pt-4 lg:pt-8">
+          <section className="flex flex-col items-center gap-3 pt-0 pb-0 px-4 md:px-8 lg:px-0 relative sm:gap-8 md:gap-12 lg:gap-14 lg:flex-row xl:flex-row-reverse md:pt-4 lg:pt-8">
             <div className="flex flex-col items-start gap-6 xs:gap-2 m-sm:gap-2 sm:gap-4 relative flex-1 grow">
               <motion.h1
                 className="heading-lg text-gray-900 dark:text-white mb-6 xs:mb-2 m-sm:mb-2 sm:mb-4"
