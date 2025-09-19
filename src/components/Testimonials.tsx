@@ -83,6 +83,7 @@ const Testimonials: React.FC = () => {
             <button
               onClick={() => setViewAll(false)}
               className="text-primary-500 hover:underline"
+               aria-label="Hide reviews" aria-description="hide all reviews button"
             >
               Hide reviews
             </button>
@@ -137,6 +138,7 @@ const Testimonials: React.FC = () => {
               <button
                 onClick={() => setViewAll(true)}
                 className="text-primary-500 hover:underline"
+                aria-label="show all reviews" aria-description="show all reviews button"
               >
                 Show all reviews
               </button>
@@ -152,7 +154,7 @@ const Testimonials: React.FC = () => {
                     ? "/avatar/male-avatar.jpg"
                     : "/avatar/female-avatar-2.jpg"
                 }
-                alt={`featuredReviews[currentIndex].name`}
+                alt={`${featuredReviews[currentIndex].name} image`}
                 className="w-20 h-20 rounded-full object-cover border-4 border-white dark:border-dark-600 shadow-md"
               />
               <p className="text-base text-gray-700 dark:text-gray-300 relative z-10">
@@ -175,6 +177,7 @@ const Testimonials: React.FC = () => {
             onClick={handlePrev}
             className="p-2 rounded-full bg-white dark:bg-dark-700 shadow-md hover:bg-gray-100 dark:hover:bg-dark-600 transition-colors duration-300"
             aria-label="Previous testimonial"
+            aria-description="click to see previous testimonial"
           >
             <ChevronLeft className="h-6 w-6 text-gray-700 dark:text-gray-300" />
           </button>
@@ -190,6 +193,7 @@ const Testimonials: React.FC = () => {
                     : "bg-gray-300 dark:bg-dark-600 hover:bg-gray-400 dark:hover:bg-dark-500"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
+                aria-description={`click to see testimonial ${index + 1}`}
               />
             ))}
           </div>
@@ -198,6 +202,7 @@ const Testimonials: React.FC = () => {
             onClick={handleNext}
             className="p-2 rounded-full bg-white dark:bg-dark-700 shadow-md hover:bg-gray-100 dark:hover:bg-dark-600 transition-colors duration-300"
             aria-label="Next testimonial"
+            aria-description="click to see next testimonial"
           >
             <ChevronRight className="h-6 w-6 text-gray-700 dark:text-gray-300" />
           </button>

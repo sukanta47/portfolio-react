@@ -277,6 +277,7 @@ const Contact: React.FC = () => {
                   className={`btn btn-primary w-full flex items-center justify-center gap-2 ${
                     submitting ? "opacity-70 cursor-not-allowed" : ""
                   }`}
+                  aria-label="submit"
                 >
                   {submitting ? (
                     <>
