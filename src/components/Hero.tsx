@@ -37,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ scrolledToShowTitle }) => {
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.15),transparent_50%)]"></div>
       </div>
 
-      <div className="container-custom z-10">
+      <div className="container-custom mt-[84px] z-10">
         <motion.div
           className="hero-content"
           initial={{ opacity: 0, y: 20 }}
