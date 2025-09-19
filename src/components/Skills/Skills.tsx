@@ -93,7 +93,7 @@ const Skills: React.FC = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 xl:gap-10 w-11/12 sm:w-[28rem] md:w-[38rem] lg:w-[52rem] xl:w-[60remrem] 2xl:w-[100rem] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 xl:gap-10 w-11/12 sm:w-[28rem] md:w-[38rem] lg:w-[52rem] xl:w-[60rem] 2xl:w-[100rem] mx-auto">
           {activeSkills.map((skill, index) => {
             const _overallProficiency = getOverallProficiency(skill);
             return (
