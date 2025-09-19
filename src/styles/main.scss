@@ -46,7 +46,7 @@
   }
 
   .container-custom {
-    @apply 2xl:max-w-full px-0 pt-[24px] pb-[48px] md:pb-[24px] md:px-14 lg:px-16 mt-[84px] md:mt-[80px];
+    @apply 2xl:max-w-full px-0 pt-[24px] pb-[48px] md:pb-[24px] md:px-14 lg:px-16 mt-[24px] md:mt-[42px] lg:mt-[84px];
   }
 
   .heading-xl {
@@ -243,6 +243,9 @@ body {
 }
 h3 {
   @apply text-lg sm:text-sm md:text-base lg:text-lg font-semibold text-gray-900 dark:text-gray-100;
+}
+.description {
+  @apply text-sm lg:text-base 2xl:text-lg;
 }
 @keyframes pulse {
   0%,
