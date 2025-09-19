@@ -106,7 +106,7 @@ const Testimonials: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-300 italic">
                   {review.review}
                 </p>
-                <h4 className="font-bold mt-2">{review.name}</h4>
+                <strong className="font-bold mt-2">{review.name}</strong>
                 <span className="text-sm text-gray-500">
                   {review.designation}, {review.company}
                 </span>

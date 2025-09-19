@@ -13,9 +13,28 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   autoPlay = true,
   interval = 3000,
 }) => {
-  const [[currentIndex, direction], setCurrentIndex] = useState<[number, number]>([0, 0]);
+  const [[currentIndex, direction], setCurrentIndex] = useState<
+    [number, number]
+  >([0, 0]);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  let startX = 0;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    startX = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50)
+      setCurrentIndex(([prev]) => [(prev + 1) % images.length, 1]); // swipe left
+    if (endX - startX > 50)
+      setCurrentIndex(([prev]) => [
+        (prev - 1 + images.length) % images.length,
+        -1,
+      ]);
+  };
 
   const prevSlide = () => {
     setCurrentIndex(([prev]) => [
@@ -25,10 +44,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   };
 
   const nextSlide = () => {
-    setCurrentIndex(([prev]) => [
-      prev === images.length - 1 ? 0 : prev + 1,
-      1,
-    ]);
+    setCurrentIndex(([prev]) => [prev === images.length - 1 ? 0 : prev + 1, 1]);
   };
 
   useEffect(() => {
@@ -45,6 +61,8 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
       className="relative w-full h-56 sm:h-64 overflow-hidden rounded-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
