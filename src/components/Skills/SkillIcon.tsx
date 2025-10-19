@@ -29,6 +29,8 @@ import TrelloIcon from "../../assets/skill-icons/trello.svg?react";
 import VSCodeIcon from "../../assets/skill-icons/visual-studio.svg?react";
 import ZustandIcon from "../../assets/skill-icons/zustand.svg?react";
 import SupabaseIcon from "../../assets/skill-icons/supabase.svg?react";
+import RTLIcon from "../../assets/skill-icons/rtl.svg?react";
+import JestIcon from "../../assets/skill-icons/jest.svg?react";
 
 const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   angular: AngularIcon,
@@ -60,6 +62,8 @@ const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   visualstudio: VSCodeIcon,
   zustand: ZustandIcon,
   supabase: SupabaseIcon,
+  rtl:RTLIcon,
+  jest:JestIcon
 };
 
 type SkillIconProps = {
