@@ -617,39 +617,70 @@ export const skills: Skill[] = [
       },
     ],
   },
-
-  // {
-  //   name: "Figma",
-  //   proficiency: 40,
-  //   category: "design",
-  //   icon: "figma",
-  //   subskills: [
-  //     {
-  //       subSkill: "Component Libraries",
-  //       proficiency: 40,
-  //       description:
-  //         "Created and maintained reusable component libraries in Figma.",
-  //     },
-  //     {
-  //       subSkill: "Auto Layout",
-  //       proficiency: 50,
-  //       description:
-  //         "Extensive use of auto layout for responsive and scalable designs.",
-  //     },
-  //     {
-  //       subSkill: "Prototyping",
-  //       proficiency: 60,
-  //       description:
-  //         "Built interactive prototypes with complex animations and transitions.",
-  //     },
-  //     {
-  //       subSkill: "Design Handoff",
-  //       proficiency: 75,
-  //       description:
-  //         "Prepared designs for developer handoff with proper documentation.",
-  //     },
-  //   ],
-  // },
+  {
+    name: "Jest",
+    proficiency: 70,
+    category: "testing",
+    icon: "jest",
+    subskills: [
+      {
+        subSkill: "Unit Testing & Assertions",
+        proficiency: 85,
+        description:
+          "Implemented robust unit tests using Jest’s assertion and matcher APIs to validate business logic and UI behavior.",
+      },
+      {
+        subSkill: "Mocking & Spying",
+        proficiency: 80,
+        description:
+          "Utilized Jest mocks, spies, and stubs to isolate dependencies and verify interactions between components and APIs.",
+      },
+      {
+        subSkill: "Snapshot Testing",
+        proficiency: 75,
+        description:
+          "Maintained snapshot tests for React components to detect unintended UI regressions efficiently.",
+      },
+      {
+        subSkill: "Test Configuration & Coverage",
+        proficiency: 70,
+        description:
+          "Configured Jest setup files, coverage thresholds, and integrated tests within CI/CD pipelines for consistent quality assurance.",
+      },
+    ],
+  },
+  {
+    name: "React Testing Library",
+    proficiency: 70,
+    category: "testing",
+    icon: "rtl",
+    subskills: [
+      {
+        subSkill: "Unit & Integration Testing",
+        proficiency: 80,
+        description:
+          "Developed unit and integration tests for React components using Jest and React Testing Library to ensure UI reliability and behavior consistency.",
+      },
+      {
+        subSkill: "Mocking & Async Testing",
+        proficiency: 75,
+        description:
+          "Skilled in mocking APIs, timers, and user events to test asynchronous operations and state transitions effectively.",
+      },
+      {
+        subSkill: "Accessibility & Queries",
+        proficiency: 70,
+        description:
+          "Used semantic queries (getByRole, getByLabelText) to promote accessible and maintainable tests aligned with real user interactions.",
+      },
+      {
+        subSkill: "Test Coverage & CI Integration",
+        proficiency: 65,
+        description:
+          "Configured test coverage thresholds and integrated automated test execution in CI/CD pipelines using Jest reporters.",
+      },
+    ],
+  },
   {
     name: "Git",
     proficiency: 85,

@@ -17,7 +17,7 @@ const Skills: React.FC = () => {
     { value: "all", label: "All Skills" },
     { value: "frontend", label: "Frontend" },
     { value: "backend", label: "Backend" },
-    // { value: "design", label: "Design" },
+    { value: "testing", label: "Testing" },
     { value: "other", label: "Other" },
   ];
 
