@@ -13,28 +13,11 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   autoPlay = true,
   interval = 3000,
 }) => {
-  const [[currentIndex, direction], setCurrentIndex] = useState<
-    [number, number]
-  >([0, 0]);
+  const [[currentIndex, direction], setCurrentIndex] = useState<[number, number]>([0, 0]);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  let startX = 0;
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    startX = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50)
-      setCurrentIndex(([prev]) => [(prev + 1) % images.length, 1]); // swipe left
-    if (endX - startX > 50)
-      setCurrentIndex(([prev]) => [
-        (prev - 1 + images.length) % images.length,
-        -1,
-      ]);
-  };
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const prevSlide = () => {
     setCurrentIndex(([prev]) => [
@@ -44,7 +27,25 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   };
 
   const nextSlide = () => {
-    setCurrentIndex(([prev]) => [prev === images.length - 1 ? 0 : prev + 1, 1]);
+    setCurrentIndex(([prev]) => [
+      prev === images.length - 1 ? 0 : prev + 1,
+      1,
+    ]);
+  };
+
+  // handle swipe touch
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const delta = touchStartX.current - touchEndX.current;
+    if (delta > 50) nextSlide();
+    else if (delta < -50) prevSlide();
   };
 
   useEffect(() => {
@@ -54,26 +55,41 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [autoPlay, isPaused, interval, images.length]);
+  }, [autoPlay, isPaused, interval, images.length, currentIndex]);
+
+  // motion variants for smooth entry/exit
+  const variants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: { x: 0, opacity: 1 },
+    exit: (direction: number) => ({
+      x: direction > 0 ? -300 : 300,
+      opacity: 0,
+    }),
+  };
 
   return (
     <div
-      className="relative w-full h-56 sm:h-64 overflow-hidden rounded-none"
+      className="relative w-full h-56 sm:h-64 overflow-hidden rounded-md"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={currentIndex}
           src={images[currentIndex]}
-          alt={`Project image Slide ${currentIndex + 1}`}
+          alt={`Project slide ${currentIndex + 1}`}
           className="absolute w-full h-full object-cover"
           custom={direction}
-          initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: direction > 0 ? -300 : 300, opacity: 0 }}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
           whileHover={{ scale: 1.1 }}
           transition={{
             x: { type: "spring", stiffness: 300, damping: 30 },
@@ -83,6 +99,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
         />
       </AnimatePresence>
 
+      {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
         className="absolute top-1/2 left-2 -translate-y-1/2 bg-black/40 p-1 rounded-full text-white hover:bg-black/60"
@@ -98,12 +115,13 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
         <ChevronRight className="w-5 h-5" />
       </button>
 
+      {/* Indicators */}
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
         {images.map((_, idx) => (
           <div
             key={idx}
-            className={`w-2 h-2 rounded-full ${
-              idx === currentIndex ? "bg-red-500" : "bg-gray-300"
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              idx === currentIndex ? "bg-red-500 scale-110" : "bg-gray-300"
             }`}
           />
         ))}
