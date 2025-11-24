@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun, Code } from "lucide-react";
+import { Menu, X, Moon, Sun, Code, Download } from "lucide-react";
 import { Transition } from "@headlessui/react";
 import { folioData } from "../data";
 import { useTheme } from "../context/ThemeContext";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  AnimationControls,
+  motion,
+  TargetAndTransition,
+  VariantLabels,
+} from "framer-motion";
 import { useAppDispatch } from "../app/hooks";
 import Badge from "./Badge";
 import { useBreakpoint } from "../hooks/useBreakpoints";
 import logo from "../assets/sb-logo-new.png";
+import { Breakpoint, getLogoTransform } from "../utils/getLogoTransform";
+import { ResumeAndThemeButtons } from "./ResumeAndThemeButton";
 
 const Navbar: React.FC = () => {
   const { aboutMe, navItems } = folioData;
@@ -17,7 +25,7 @@ const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("home");
   const dispatch = useAppDispatch();
-  const breakpoint = useBreakpoint();
+  const breakpoint = useBreakpoint<Breakpoint>();
   const x_initial =
     breakpoint === "xs"
       ? 38
@@ -43,7 +51,8 @@ const Navbar: React.FC = () => {
       ? 44
       : 10;
 
-      const y_animate = breakpoint === "xs"
+  const y_animate =
+    breakpoint === "xs"
       ? -10
       : breakpoint === "sm"
       ? -6
@@ -61,7 +70,7 @@ const Navbar: React.FC = () => {
         payload: window.scrollY > 44,
       });
       const sections = document.querySelectorAll("section[id]");
-      const scrollPosition = window.scrollY + 80; 
+      const scrollPosition = window.scrollY + 80;
 
       sections.forEach((section) => {
         const sectionTop = (section as HTMLElement).offsetTop;
@@ -107,11 +116,12 @@ const Navbar: React.FC = () => {
             <motion.div
               className="ease-in-out hero-content max-w-2xl"
               animate={{
-                y: scrolledToShowTitle  
-                ? breakpoint === "xs"
+                y: scrolledToShowTitle
+                  ? breakpoint === "xs"
                     ? -4
-                    : breakpoint === "sm" ? 0 
-                    : 2 
+                    : breakpoint === "sm"
+                    ? 0
+                    : 2
                   : 0,
                 x: scrolledToShowTitle
                   ? breakpoint === "xs"
@@ -139,16 +149,26 @@ const Navbar: React.FC = () => {
                   className={`${scrolledToShowTitle ? "h-8 w-8" : "h-10 w-10"}`}
                   alt="app-logo"
                 />
-                <span className={`dark:text-white ${scrolledToShowTitle ? "text-base xl:text-lg 2xl:text-xl" : "text-lg xl:text-2xl"}`}>{aboutMe.name}</span>
+                <span
+                  className={`dark:text-white ${
+                    scrolledToShowTitle
+                      ? "text-base xl:text-lg 2xl:text-xl"
+                      : "text-lg xl:text-2xl"
+                  }`}
+                >
+                  {" "}
+                  {aboutMe.name}{" "}
+                </span>
               </a>
             </motion.div>
             <AnimatePresence initial={false}>
+              {" "}
               {scrolledToShowTitle && (
                 <motion.div
                   key="hero-badge"
                   className="ease-in-out hero-content max-w-2xl flex items-center"
                   initial={{ y: 10, opacity: 0, scale: 1.2, x: x_initial }}
-                  animate={{ y: y_animate, opacity: 1, scale: 1, x: x_animate }} // shift left
+                  animate={{ y: y_animate, opacity: 1, scale: 1, x: x_animate }}
                   exit={{ y: 10, opacity: 0, scale: 1.2, x: x_initial }}
                   transition={{
                     duration: 0.4,
@@ -163,8 +183,10 @@ const Navbar: React.FC = () => {
               )}
             </AnimatePresence>
           </div>
-          <div className="hidden md:block col-span-2 md:col-span-3 lg:col-span-2 justify-self-center lg:space-between self-center max-w-lg">
-            <div className="ml-10 flex items-baseline gap-2 lg:gap-4">
+
+          {/* Desktop Nav Links */}
+          <div className="hidden md:block col-span-2 md:col-span-3 lg:col-span-2 self-center">
+            <div className="ml-10 flex items-baseline gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
@@ -189,58 +211,37 @@ const Navbar: React.FC = () => {
               ))}
             </div>
           </div>
-          <div className="hidden md:block justify-self-end self-center">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-dark-600 transition-colors duration-300"
-              aria-label={
-                theme === "dark"
-                  ? "Switch to light mode"
-                  : "Switch to dark mode"
-              }
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-600" />
-              )}
-            </button>
+
+          {/* Desktop Buttons (Resume + Theme) */}
+          <div className="hidden md:flex justify-end items-center gap-2">
+            <ResumeAndThemeButtons theme={theme} toggleTheme={toggleTheme} />
           </div>
-          <div className="flex gap-2 md:hidden justify-self-end self-center">
-            <button
-              onClick={toggleTheme}
-              className="rounded-full hover:bg-gray-200 dark:hover:bg-dark-600 transition-colors duration-300"
-              aria-label={
-                theme === "dark"
-                  ? "Switch to light mode"
-                  : "Switch to dark mode"
-              }
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-600" />
-              )}
-            </button>
+
+          {/* Mobile Menu + Buttons */}
+          <div className="flex md:hidden justify-end items-center gap-2">
+            <ResumeAndThemeButtons
+              theme={theme}
+              toggleTheme={toggleTheme}
+              isMobile
+            />
+
+            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              type="button"
-              className="pr-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
-              aria-label="mobile-menu"
-              aria-controls="mobile-menu"
+              className="pr-2 rounded-md hover:bg-gray-200 dark:hover:bg-dark-600 transition focus:ring-2"
               aria-expanded={isOpen}
             >
-              <span className="sr-only">Open main menu</span>
               {isOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />
+                <X className="h-6 w-6" />
               ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
+                <Menu className="h-6 w-6" />
               )}
             </button>
           </div>
         </div>
       </div>
 
+      {/* Mobile Nav Items */}
       <Transition
         show={isOpen}
         enter="transition ease-out duration-200 transform"
@@ -250,11 +251,8 @@ const Navbar: React.FC = () => {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 -translate-y-4"
       >
-        <div
-          className="md:hidden bg-white/95 dark:bg-dark-800/95 backdrop-blur-md shadow-lg"
-          id="mobile-menu"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-white/95 dark:bg-dark-800/95 backdrop-blur-md shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -263,11 +261,11 @@ const Navbar: React.FC = () => {
                   e.preventDefault();
                   handleItemClick(item.href);
                 }}
-                className={`${
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
                   activeSection === item.href.substring(1)
                     ? "bg-primary-50 dark:bg-primary-900 text-primary-500 dark:text-primary-400"
                     : "text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-700"
-                } block px-3 py-2 rounded-md text-base font-medium`}
+                }`}
                 aria-current={
                   activeSection === item.href.substring(1) ? "page" : undefined
                 }

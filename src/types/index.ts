@@ -1,3 +1,6 @@
+import { ThemeMode } from "../components/ResumeAndThemeButton";
+import { Breakpoint } from "../utils/getLogoTransform";
+
 export interface Project {
   id: number;
   title: string;
@@ -50,3 +53,31 @@ export interface Testimonial {
    image?: string;
    extractHtml?: string;
  };
+
+ export interface NavItem {
+  href: string;
+  title: string;
+}
+
+export interface NavbarProps {
+  scrolled: boolean;
+  scrolledToShowTitle: boolean;
+  breakpoint: Breakpoint;
+  navItems: NavItem[];
+  activeSection: string;
+  theme: ThemeMode;
+  isOpen: boolean;
+  logo: string;
+  aboutMe: {
+    name: string;
+    title: string;
+  };
+  toggleTheme: () => void;
+  setIsOpen: (value: boolean) => void;
+  handleItemClick: (href: string) => void;
+
+  // optional animation positions
+  x_initial?: number;
+  x_animate?: number;
+  y_animate?: number;
+}

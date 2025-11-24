@@ -14,11 +14,11 @@ const getBreakpoint = (): string => {
   return "desktop";
 };
 
-export const useBreakpoint = () => {
-  const [breakpoint, setBreakpoint] = useState(getBreakpoint());
+export const useBreakpoint = <T extends string>() => {
+  const [breakpoint, setBreakpoint] = useState<T>(getBreakpoint() as T);
 
   useEffect(() => {
-    const handleResize = () => setBreakpoint(getBreakpoint());
+    const handleResize = () => setBreakpoint(getBreakpoint() as T);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
